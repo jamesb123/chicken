@@ -1,0 +1,91 @@
+<html>
+<style type="text/css">
+table, td, th
+{
+border-collapse:collapse;	
+border:0px ;
+text-align:left;
+}
+th
+{
+color:black;
+}
+
+</style>
+
+<body>
+<table width="1024" border="0">
+  <tr><td width=900 height="450" bgcolor="#D2DBEC">
+	<table width="900" height="450" border="0" align="center" bordercolor="#d8d770">
+	  	<tr><td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF">
+		<table width="800" height="169" border="0" bgcolor="#d8d770">
+          <th scope="col"><%= image_tag "wolfheader4.jpg", :width => "900", :height => "169" %>photo credit/copyright Michael Runtz</th>
+    	</table>
+        <table width="600" height="295" orderride border="0" borderstyle="hidden" align="center" cellspacing="1" >
+    			<tr><td colspan=2><h2>Menu for Wolf Samples</h2></td></tr>
+	            <tr><td colspan=3><h3>For help please contact info@nrdpfc.ca</h2></td></tr>
+	            <tr><td colspan=3><h3>See below for information regarding the permits needed to send sample to NRDPFC.</h2></td></tr>
+				<tr><td colspan=3> Logged in as: <%= current_user.name%> Project ID <%=@pr_id	%></td><tr>
+				<tr><td colspan=3>Project: <%=@pr_desc%> </td></tr>
+				<tr><td><p></p></td></tr>
+ 				<tr><td width=30% ><%= link_to 'Submit Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
+				<tr><td><%= link_to 'Edit and Track Sample', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
+				<tr><td><%= error_messages_for :user %></td></tr>
+				<tr><td><p></p></td></tr>
+    			<tr><td colspan=2><a href="importexport.pdf">Importing and Exporting Samples for Scientific Research</a></td></tr>
+          </table>
+          <p align="left">&nbsp;</p>
+          <p align="left">&nbsp;</p>
+			<tr>
+              <td><div align="center">
+				<%= image_tag "trentu.jpg", :alt => "1", :width => "162", :height => "50", :border => "0" %>
+				<%= image_tag "nrdpfc.jpg", :alt => "1", :width => "67", :height => "50", :border => "0"  %>
+				</div></td>
+			</tr>
+      </table>
+    <p>&nbsp;</p></td>
+  </tr>
+   
+</table></td>
+  </tr>
+</table>
+
+
+
+<script type="text/javascript">
+    //image cycling javascript code    
+    var imageShown = 1;
+    var intervalID = setInterval("CycleImage()", 7000);  //initial cycle
+
+    function showImage(imgNum) {
+        clearInterval(intervalID); //turn off initial timer  
+              
+        for (var i = 1; i <= 5; i++) {
+            //turn off all pictures
+            document.getElementById("imgBig" + i).style.display = 'none';
+        }
+        //turn on requested image
+        document.getElementById("imgBig" + imgNum).style.display = 'block';
+        imageShown = imgNum; //track which is shown for cycling
+            
+        //after 10 seconds resume cycling
+        setTimeout("setNormalCycle()", 14000); //after click, start slower cycle
+        //intervalID =setInterval("CycleImage()", 1000); //after click, start slower cycle
+}
+
+function setNormalCycle() {
+    clearInterval(intervalID);
+    intervalID = setInterval("CycleImage()", 7000); 
+}
+
+function CycleImage()
+{
+    //Increment which image is not hidden
+    document.getElementById("imgBig" + imageShown).style.display = 'none';
+    imageShown++;
+    if (imageShown > 5) { imageShown = 1; }
+    document.getElementById("imgBig" + imageShown).style.display = 'block';
+    
+}
+</script>

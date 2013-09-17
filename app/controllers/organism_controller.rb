@@ -1,0 +1,2 @@
+class OrganismController < ApplicationController
+end
