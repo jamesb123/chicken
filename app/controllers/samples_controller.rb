@@ -1,6 +1,7 @@
 # Find
 # http://en.wikibooks.org/wiki/Ruby_on_Rails/Examples
 #The find method of ActiveRecord is documented in the Rails API manual
+@prid=66
 
 class SamplesController < ApplicationController
   # GET /samples
@@ -39,13 +40,12 @@ class SamplesController < ApplicationController
   # GET /samples/new.xml
   def new
     @sample = Sample.new
-    @sample.submitted_by =  current_user.name
     @sample.user_id = current_user.id
-    @sample.date_submitted = Date.today
-    @sample.project_id = PROJECT_NUMBER
+    @sample.submitted_by = current_user.name
+    @sample.date_collected = Date.today
+    @sample.project_id = 66
     @sample.approved = false
     @sample.remote_data_entry = true
-    @sample.import_permit = "CA027"
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @sample }
@@ -63,7 +63,7 @@ class SamplesController < ApplicationController
     @sample = Sample.new(params[:sample])
     respond_to do |format|
       if @sample.save
-        Emailer.deliver_submission(EMAIL_SAMPLES, "New Sample Submitted by "+ @sample.submitted_by, @sample.submitted_by, @sample.project_id, @sample.field_code,@sample.date_submitted,@sample.shipping_date, @sample.batch_number ) 
+        Emailer.deliver_submission(EMAIL_SAMPLES, "New Sample Submitted by "+ @sample.collected_by, @sample.collected_by, @sample.project_id, 'blank', @sample.date_collected, 'blank2', @sample.batch_number ) 
         flash[:notice] = 'Sample was successfully created.'
         format.html { redirect_to(@sample) }
         format.xml  { render :xml => @sample, :status => :created, :location => @sample }

@@ -6,12 +6,18 @@ td
 vertical-align:middle;
 text-align:center;
 }
+th
+{
+background-color:#FFFF66;
+color:black;
+}
+
 </style>
 </head>
 
 <table width="1024" border="0">
   <tr>
-    <td width="900" height="450" bgcolor="#d8d770">
+    <td width="900" height="450" bgcolor="#FFFF66">
 	<table width="900" height="450" border="0" align="center" bordercolor="#ABBCD8">
 	  <tr>
 		<td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF"><table width="900" height="169" border="0">
@@ -20,7 +26,7 @@ text-align:center;
               </th>
           </tr>
         </table>
-		  <table width="904" border="1" align="center" bgcolor="#d8d770" cellpadding=5>
+		  <table width="904" border="1" align="center" bgcolor="#FFFF66" cellpadding=5>
             <tr>
               <th  >Please fill in all fields with your sample data.<br>  Click the CREATE button when you are finished to add the sample into the database and begin the tracking process.<br>
 			  Thank you for entering your sample in the NRDPFC DNA databank.<br>  You can check the tracking section to follow your sample through the system.</th>
@@ -47,35 +53,19 @@ text-align:left;
 		<tr><th>Name</th><th>Value</th><th>Description</th></tr>
          <tr></tr>
 	<% form_for(@sample) do |f| %>
-	<tr><td  width="25%"><%= f.label :submitted_by %></td><td width = "35%" ><%= f.text_field :submitted_by %></td><td width = "40%" > Current user Logged in</td></tr>
-	<tr align=left><td><%= f.label :shipping_date %></td><td><%= f.calendar_date_select :shipping_date %></td><td>The date sample was shipped - click on calendar</td></tr>
-	<tr><td><%= f.label :date_submitted %></td><td><%= f.text_field :date_submitted,:value => f.object.date_submitted.strftime('%Y-%m-%d')  unless f.object.date_submitted.nil?  %></td><td>Default is today's date</td></tr>
-	<tr><td><%= f.label :field_code %></td><td><%= f.text_field :field_code %></td><td><%= FIELD_CODE_DESC %></td></tr>
-	<tr><td><%= f.label :organism_index, 'Necropsy Sample Number' %></td><td><%= f.text_field :organism_index %></td><td>For Necropsies only. This distiguishes multiple samples from the same individual (e.g. 1,2,3,4)<br>Please clearly label samples this way.</td></tr>
-	<tr><td><%= f.label :sample_bc, 'Sample Barcode' %></td><td><%= f.text_field :sample_bc %></td><td><%=SAMPLE_BC_DESC%></td></tr>
-	<tr><td><%= f.label :photo_id, 'Sighting ID' %></td><td><%= f.text_field :photo_id %></td><td>The unique sighting photo record number associated with this sample</td></tr>
-	<tr><td><%= f.label :field_indent, 'Field Identification (NEA)'%></td><td><%= f.text_field :field_ident %></td><td><%=FIELD_IDENT_DESC%></td></tr>
-	<tr><td><%= f.label :collected_on_day %></td><td><%= f.collection_select(:collected_on_day , Sample::DD, :to_s, :to_s, {:include_blank => true, :prompt => true } , {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></tr>
-	<tr><td><%= f.label :collected_on_month %></td><td><%= f.collection_select(:collected_on_month , Sample::MM, :to_s, :to_s, {:include_blank => true, :prompt => true}, {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></td></tr>
-	<tr><td><%= f.label :collected_on_year %></td><td><%= f.collection_select(:collected_on_year , Sample::YY, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) %></td><td><%=DMY_DESC%></td></tr>
-	<tr><td><%= f.label :organization_id %></td><td><%= f.collection_select( :organization_id, Organization.find(:all), :id, :org_name, {:include_blank => true, :prompt => true }, {"style" => "width:105px" }) %></td><td><%=ORGANIZATION_DESC%></td></tr>
-	<tr><td><%= f.label :text_tissue_type %></td><td><%= f.collection_select( :text_tissue_type , Sample::TT, :to_s, :to_s, {:include_blank => true, :prompt => true }, {"style" => "width:105px" } ) %></td><td><%=TISSUE_TYPE_DESC%></td></tr>
-	<tr><td><%= f.label :export_permit %></td><td><%= f.text_field :export_permit %></td><td><%=EXPORT_PERMIT_DESC%></td></tr> 
-	<tr height="25"><td><%= f.label :import_permit %></td><td><%= f.text_field :import_permit %></td><td><%=IMPORT_PERMIT_DESC%></td></tr> 
-	<tr><td><%= f.label :current_location %></td><td><%= f.text_field :current_location %></td><td><%=CURRENT_LOC_DESC%></td></tr>
-	<tr><td><%= f.label :comments %></td><td><%= f.text_field :comments %></td><td><%=COMMENTS_DESC%></td></tr>
+	<tr><td  width="25%"><%= f.label :sample_bc, 'Sample Barcode' %></td><td><%= f.text_field :sample_bc %></td><td>bar code</td></tr>
+	<tr align=left><td><%= f.label :date_collected %></td><td><%= f.calendar_date_select :date_collected %></td><td>The date sample was collected - click on calendar</td></tr>
+	<tr><td><%= f.label :collected_by, 'Contact Person'%></td><td width = "35%" ><%= f.text_field :collected_by %></td><td width = "40%" > Collected by</td></tr>
+	<tr><td><%= f.label :chicken_meat_part, 'Meat Part' %></td><td><%= f.collection_select( :chicken_meat_part , Sample::TT, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>meat part</td></tr>
+	<tr><td><%= f.label :comments, 'Additional Information' %></td><td><%= f.text_field :comments %></td><td>Additional Information</td></tr>
 
-	<%= f.hidden_field :project_id, {:value => PROJECT_NUMBER} %>
+	<%= f.hidden_field :project_id, {:value => 66 } %>
 	<%= f.hidden_field :user_id  %>
+	<%= f.hidden_field :submitted_by  %>
 	<%= f.hidden_field :remote_data_entry, {:value => true} %>
 
-	<% @sample.collected_by = params[:org_name] %>
-	<% @sample.text_tissue_type = params[:text_tissue_type] %>
-	<% @sample.collected_on_day = params[:collected_on_day] %>
-	<% @sample.collected_on_month = params[:collected_on_month] %>
-	<% @sample.collected_on_year = params[:collected_on_year] %>
-	<% @sample.project_id = PROJECT_NUMBER%>
-	<% @sample.import_permit = "CA027"%>
+	<% @sample.chicken_meat_part = params[:chicken_meat_part] %>
+
 	<tr><td><%= f.submit "Create" %></td></tr>
 <% end %>
 </div>
