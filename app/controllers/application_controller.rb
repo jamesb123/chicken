@@ -10,7 +10,13 @@ BKGRND = "#FFFF66"
  EMAIL_SAMPLES = "james@burrett.org"
  PROJECT_NUMBER = 66
 
-TT = ["Unknown", "Boneless, Skinless Breast", "Boneless, Skinless Thigh"]
+MP = ["Unknown", "Boneless, Skinless Breast", "Boneless, Skinless Thigh"]
+CO = ["Unknown", "Canada", "USA"]
+ST = ["Unknown", "Bovain", "Cobb 500","Cobb 700","Cobb Mx","Erie","Hubbard","Hyline","Ross 308","Ross 344","Ross 708","Ross 744","Shaver","Shaver D"]
+PR = ["Unknown", "Commercial", "Dam","Egg Layer","Sire"]
+DG = ["Unknown", "Female", "Male"]
+FE = ["Unknown", "Fast Feather", "Slow Feather"]
+YN = ["Unknown", "Yes", "No"]
 
   def nice_date_display(the_date)
     return (the_date ? the_date.strftime('%Y.%m.%d') : '')

@@ -54,9 +54,15 @@ text-align:left;
          <tr></tr>
 	<% form_for(@sample) do |f| %>
 	<tr><td  width="25%"><%= f.label :sample_bc, 'Sample Barcode' %></td><td><%= f.text_field :sample_bc %></td><td>bar code</td></tr>
-	<tr align=left><td><%= f.label :date_collected %></td><td><%= f.calendar_date_select :date_collected %></td><td>The date sample was collected - click on calendar</td></tr>
+	<tr><td><%= f.label :date_collected %></td><td><%= f.calendar_date_select :date_collected %></td><td>The date sample was collected - click on calendar</td></tr>
 	<tr><td><%= f.label :collected_by, 'Contact Person'%></td><td width = "35%" ><%= f.text_field :collected_by %></td><td width = "40%" > Collected by</td></tr>
-	<tr><td><%= f.label :chicken_meat_part, 'Meat Part' %></td><td><%= f.collection_select( :chicken_meat_part , Sample::TT, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>meat part</td></tr>
+	<tr><td><%= f.label :chicken_country, 'Country' %></td><td><%= f.collection_select( :chicken_country , Sample::CO, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Country of Origin</td></tr>
+	<tr><td><%= f.label :submitter_comments, 'Strain' %></td><td><%= f.collection_select( :submitter_comments , Sample::ST, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Strain</td></tr>
+	<tr><td><%= f.label :collector_comments, 'Package Role' %></td><td><%= f.collection_select( :collector_comments , Sample::PR, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Package Role</td></tr>
+	<tr><td><%= f.label :chicken_declared_gender, 'Declared Gender' %></td><td><%= f.collection_select( :chicken_declared_gender , Sample::DG, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Declared Gender</td></tr>
+	<tr><td><%= f.label :chicken_meat_part, 'Meat Part' %></td><td><%= f.collection_select( :chicken_meat_part , Sample::MP, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Meat Part</td></tr>
+	<tr><td><%= f.label :chicken_feathering, 'Feathering' %></td><td><%= f.collection_select( :chicken_feathering , Sample::FE, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Feathering</td></tr>
+	<tr><td><%= f.label :chicken_ml_duplicate, 'Maple Leaf Duplicate' %></td><td><%= f.collection_select( :chicken_ml_duplicate , Sample::YN, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Maple Leaf Duplicate</td></tr>
 	<tr><td><%= f.label :comments, 'Additional Information' %></td><td><%= f.text_field :comments %></td><td>Additional Information</td></tr>
 
 	<%= f.hidden_field :project_id, {:value => 66 } %>
