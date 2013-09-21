@@ -29,7 +29,7 @@ class Emailer < ActionMailer::Base
       end    
   end
   # email sent to single sample submission --------------------------------------
-  def submission(recipient, subject, name, project_id, field_code, date_submitted, shipping_date, batch_number, sent_at = Time.now)
+  def submission(recipient, subject, name, project_id, date_collected, sent_at = Time.now)
       @subject = subject
       @recipients = recipient
       @from = 'info@nrdpfc.ca'
@@ -38,9 +38,7 @@ class Emailer < ActionMailer::Base
       @body["name"] = name
       @body["email"] = recipient
       @body["project_id"] = project_id
-      @body["field_code"] = field_code
-      @body["date_submitted"] = date_submitted
-      @body["shipping_date"] = shipping_date
+      @body["date_collected"] = date_collected
       
       @headers = {content_type => 'text/html'}
    end

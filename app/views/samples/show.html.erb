@@ -45,52 +45,34 @@ vertical-align:middle;
 	<table width="400" height="550" border="1px" cellspacing="2" cellpadding = "3">
 		<tr><th>Name</th><th>Value</th></tr>
 
-		<%if @sample.date_submitted.blank?%>
-			<tr><td class="empty">Submitted Date</td><td align=left><%= nice_date_display(@sample.date_submitted) %></td></tr>
-		<%else%>
-			<tr><td class="nempty">Submitted Date</td><td align=left><%= nice_date_display(@sample.date_submitted) %></td></tr>
-		<%end%>
-
-	  	<%if @sample.field_code.blank?%>
-			<tr><td class="empty" width=35%>Field Code</td><td width=65% ><%= @sample.field_code %></td></tr>
-		<%else%>
-			<tr><td class="nempty"width=35%>Field Code</td><td width=65% ><%= @sample.field_code %></td></tr>
-		<%end%>
-
-	  	<%if @sample.organism_index.blank?%>
-			<tr><td class="empty" width=35%>Necropsy Sample Number</td><td width=65% ><%= @sample.organism_index %></td></tr>
-		<%else%>
-			<tr><td class="nempty"width=35%>Necropsy Sample Number</td><td width=65% ><%= @sample.organism_index %></td></tr>
-		<%end%>
-
 		<%if @sample.sample_bc.blank?%>
 			<tr><td class="empty">Sample Barcode</td></td><td><%= @sample.sample_bc %></td>
 		<%else%>
 			<tr><td class="nempty">Sample Barcode</td></td><td><%= @sample.sample_bc %></td>
 		<%end%>
 
-		<%if @sample.photo_id.blank?%>
-			<tr><td class="empty">Sighting ID</td></td><td><%= @sample.photo_id %></td>
+		<%if @sample.date_collected.blank?%>
+			<tr><td class="empty">Date Collected</td><td align=left><%= nice_date_display(@sample.date_collected) %></td></tr>
 		<%else%>
-			<tr><td class="nempty">Sighting ID</td></td><td><%= @sample.photo_id %></td>
+			<tr><td class="nempty">Date Collected</td><td align=left><%= nice_date_display(@sample.date_collected) %></td></tr>
 		<%end%>
 
-		<%if @sample.field_ident.blank?%>
-			<tr><td class="empty">Field Identification</td></td><td><%= @sample.field_ident %></td>
+		<%if @sample.chicken_country.blank?%>
+			<tr><td class="empty">Chicken Country</td></td><td><%= @sample.chicken_country %></td>
 		<%else%>
-			<tr><td class="nempty">Field Identification</td></td><td><%= @sample.field_ident %></td>
+			<tr><td class="nempty">Chicken Country</td></td><td><%= @sample.chicken_country %></td>
 		<%end%>
 
-	  	<%if @sample.date_collected.blank?%>
-			<tr><td class="empty" width=35%>Date Collected</td><td width=65% ><%= nice_date_display(@sample.date_collected) %></td></tr>
+	  	<%if @sample.submitter_comments.blank?%>
+			<tr><td class="empty" width=35%>Strain</td><td width=65% ><%= @sample.submitter_comments %></td></tr>
 		<%else%>
-			<tr><td class="nempty"width=35%>Date Collected</td><td width=65% ><%= nice_date_display(@sample.date_collected) %></td></tr>
+			<tr><td class="nempty"width=35%>Strain</td><td width=65% ><%= @sample.submitter_comments %></td></tr>
 		<%end%>
 
-	  	<%if @sample.organization_id.nil?%>
-			<tr><td class="empty" width=35%>Organization</td><td width=65% ><%= '' %></td></tr>
+		<%if @sample.collector_comments.blank?%>
+			<tr><td class="empty">Package Role</td></td><td><%= @sample.collector_comments%></td>
 		<%else%>
-			<tr><td class="nempty"width=35%>Organization</td><td width=65% ><%= @org.org_name %></td></tr>
+			<tr><td class="nempty">Package Role</td></td><td><%= @sample.collector_comments%></td>
 		<%end%>
 
 	  	<%if @sample.text_tissue_type.blank?%>

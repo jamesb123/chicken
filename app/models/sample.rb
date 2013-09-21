@@ -24,7 +24,6 @@ class Sample < ActiveRecord::Base
   accepts_nested_attributes_for :dna_results
   accepts_nested_attributes_for :mt_dnas
   
-  before_save :assign_collected_YMD
 #  after_create :send_sample_mail
 
 #----- done in controller now
@@ -32,14 +31,6 @@ class Sample < ActiveRecord::Base
 #    Emailer.deliver_submission(EMAIL_SAMPLES, "New Sample Submitted", self.submitted_by, self.project_id, self.field_code,self.date_submitted,self.shipping_date, self.batch_number ) 
 #  end
 
-  def assign_collected_YMD
-    if self.collected_on_day.blank? or self.collected_on_month.blank? or self.collected_on_year.blank?
-      self.date_collected = nil
-    else
-      self.date_collected = DateTime.strptime(self.collected_on_year + "/" + self.collected_on_month + "/" + self.collected_on_day, "%Y/%m/%d" )
-    end
-  end
-  
 def self.import(file)
   spreadsheet = open_spreadsheet(file)
   header = spreadsheet.row(1)

@@ -11,9 +11,9 @@ class SamplesController < ApplicationController
  def index
     @batch_import = false
     if current_user.login == "admin"
-      @sample = Sample.find(:all, :order => 'date_submitted' , :include => [:genders, :dna_results, :mt_dnas], :conditions => "project_id = #{PROJECT_NUMBER} and remote_data_entry = true")
+      @sample = Sample.find(:all, :order => 'date_collected' , :include => [:genders, :dna_results, :mt_dnas], :conditions => "project_id = #{PROJECT_NUMBER} and remote_data_entry = true")
     else
-      @sample = Sample.find(:all, :order => 'date_submitted' , :include => [:genders, :dna_results, :mt_dnas], :conditions => "project_id = #{PROJECT_NUMBER} and remote_data_entry = true and user_id = '#{current_user.id}'")
+      @sample = Sample.find(:all, :order => 'date_collected' , :include => [:genders, :dna_results, :mt_dnas], :conditions => "project_id = #{PROJECT_NUMBER} and remote_data_entry = true and user_id = '#{current_user.id}'")
     end
 
     respond_to do |format|
@@ -63,7 +63,7 @@ class SamplesController < ApplicationController
     @sample = Sample.new(params[:sample])
     respond_to do |format|
       if @sample.save
-        Emailer.deliver_submission(EMAIL_SAMPLES, "New Sample Submitted by "+ @sample.collected_by, @sample.collected_by, @sample.project_id, 'blank', @sample.date_collected, 'blank2', @sample.batch_number ) 
+        Emailer.deliver_submission(EMAIL_SAMPLES, "New Sample Submitted by "+ @sample.collected_by, @sample.collected_by, @sample.project_id, @sample.date_collected ) 
         flash[:notice] = 'Sample was successfully created.'
         format.html { redirect_to(@sample) }
         format.xml  { render :xml => @sample, :status => :created, :location => @sample }

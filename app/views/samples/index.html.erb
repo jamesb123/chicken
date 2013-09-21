@@ -27,7 +27,7 @@ vertical-align:top;
 
 <table width="750" height="100" border="1" align="center" cellpadding = "1" >
   <tr height=20>
-	<th width=100>Date Submitted</th>
+	<th width=100>Date Collected</th>
 	<th width=100>Field Code</th>
 	<th width=100>Bar Code</th>
 	<th width=100>Field Ident</th>
@@ -38,7 +38,7 @@ vertical-align:top;
 
 <% for sample in @sample %>
  <tr height=30 >
-  	<td width=100 height=20 ><%= nice_date_display(sample.date_submitted) %>
+  	<td width=100 height=20 ><%= nice_date_display(sample.date_collected) %>
   	<td width=100 height=20 ><%= sample.field_code %>
   	<td width=100 height=20 ><%= sample.sample_bc %>
   	<td width=100 height=20 ><%= sample.field_ident %>
