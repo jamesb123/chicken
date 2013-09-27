@@ -17,12 +17,12 @@ vertical-align:middle;
 </style>
 
 <title>Tracking</title>
-<table width="1024" border="0">
+<table width="1024" height="800" border="0" bgcolor="#FFFF66">
   <tr>
-    <td width="900" height="600" bgcolor="#d8d770">
-	<table width="900" height="600" border="0" align="center" bordercolor="#ABBCD8">
-	  <tr>
-		<td width="900" height=900" align="center" valign="top" bgcolor="#FFFFFF"><table width="900" height="169" border="0">
+    <td width="900" height="700" bgcolor="#FFFF66">
+	<table width="900" height="500" border="0" align="center" bordercolor="#ABBCD8">
+	  <tr><td width="900" height=500" align="center" valign="top" bgcolor="#FFFFFF">
+			<table width="900" height="169" border="0">
 			<tr><td><h2>NRDPFC Chicken Sample Submission/Tracking</h2></td></tr>
           <tr>
             <th scope="col"><p><%= image_tag "chickens.jpg", :width => "900", :height => "169" %></p>
@@ -42,7 +42,7 @@ vertical-align:middle;
 <h2>Right Whale Sample <%=@sample.id %> Submitted <%= nice_date_display(@sample.date_submitted) %> by <%= current_user.to_s %></h2>
 <font color="green">Green Indicates Complete</font>
 <font color="red">Red Indicates Incomplete</font><p></p>
-	<table width="400" height="550" border="1px" cellspacing="2" cellpadding = "3">
+	<table width="400" height="400" border="1px" cellspacing="2" cellpadding = "3">
 		<tr><th>Name</th><th>Value</th></tr>
 
 		<%if @sample.sample_bc.blank?%>
@@ -75,113 +75,35 @@ vertical-align:middle;
 			<tr><td class="nempty">Package Role</td></td><td><%= @sample.collector_comments%></td>
 		<%end%>
 
-	  	<%if @sample.text_tissue_type.blank?%>
-			<tr><td class="empty" width=35%>Tissue Type</td><td width=65% ><%= '' %></td></tr>
+	  	<%if @sample.chicken_declared_gender.blank?%>
+			<tr><td class="empty" width=35%>Declared Gender</td><td width=65% ><%= @sample.chicken_declared_gender %></td></tr>
 		<%else%>
-			<tr><td class="nempty"width=35%>Tissue Type</td><td width=65% ><%= @sample.text_tissue_type %></td></tr>
+			<tr><td class="nempty"width=35%>Declared Gender</td><td width=65% ><%= @sample.chicken_declared_gender %></td></tr>
 		<%end%>
 
-		<%if @sample.shipping_date.blank?%>
-			<tr><td class="empty">Shipping Date</td><td align=left ><%= nice_date_display(@sample.shipping_date) %></td></tr>
+		<%if @sample.chicken_meat_part.blank?%>
+			<tr><td class="empty">Meat Part</td><td align=left ><%= @sample.chicken_meat_part %></td></tr>
 		<%else%>
-			<tr><td class="nempty">Shipping Date</td><td align=left ><%= nice_date_display(@sample.shipping_date) %></td></tr>
+			<tr><td class="nempty">Meat Part</td><td align=left ><%= @sample.chicken_meat_part %></td></tr>
 		<%end%>
 
-		<%if @sample.export_permit.blank?%>
-			<tr><td class="empty">Export Permit</td></td><td><%= @sample.export_permit %></td>
+		<%if @sample.chicken_feathering.blank?%>
+			<tr><td class="empty">Feathering</td></td><td><%= @sample.chicken_feathering %></td>
 		<%else%>
-			<tr><td class="nempty">Export Permit</td></td><td><%= @sample.export_permit %></td>
+			<tr><td class="nempty">Feathering</td></td><td><%= @sample.chicken_feathering %></td>
 		<%end%>
 
-		<%if @sample.import_permit.blank?%>
-			<tr><td class="empty">Import Permit</td></td><td><%= @sample.import_permit %></td>
+		<%if @sample.chicken_ml_duplicate.blank?%>
+			<tr><td class="empty">Maple Leaf Duplicate</td></td><td><%= @sample.chicken_ml_duplicate %></td>
 		<%else%>
-			<tr><td class="nempty">Import Permit</td></td><td><%= @sample.import_permit %></td>
-		<%end%>
-
-		<%if @sample.date_received.blank?%>
-			<tr><td class="empty">Received Date</td><td ><%= nice_date_display(@sample.date_received) %></td></tr>
-		<%else%>
-			<tr><td class="nempty">Received Date</td><td ><%= nice_date_display(@sample.date_received) %></td></tr>
-		<%end%>
-
-		<%if @sample.dna_results.blank? %>
-				<tr><td class="empty" >Extraction Date</td><td></td></tr>
-		<%else%>
-			<% @sample.dna_results.each do |d| %>
-				<%if d.extraction_date.blank? %>
-					<tr><td class="empty" >Extraction Date</td><td></td></tr>
-				<%else%>
-					<tr><td class="nempty">Extraction Date</td><td>  <%= nice_date_display(d.extraction_date) %> </td></tr>
-				<%end%>
-			<% end %>		
-		<%end%>
-		
-		<%if @sample.mt_dnas.blank? %>
-				<tr><td class="empty">Date Sequenced</td><td></td></tr>
-				<tr><td class="empty">Haplotype</td><td></td></tr>
-				<tr><td class="empty">Short Haplotype</td><td></td></tr>
-		<%else%>
-			<% @sample.mt_dnas.each do |m| %>
-				<%if m.date_sequenced.blank? %>
-					<tr><td class="empty">Date Sequenced</td><td></td></tr>
-				<%else%>	
-					<tr><td class="nempty">Date Sequenced</td><td><%= nice_date_display(m.date_sequenced) %> </td></tr>
-				<%end%>
-				<%if m.haplotype.blank? %>
-					<tr><td class="empty">Haplotype</td><td></td></tr>
-				<%else%>
-					<tr><td class=nempty>Haplotype</td><td>  <%= m.haplotype %> </td></tr>
-				<%end%>
-				<%if m.haplotype_short.blank? %>
-					<tr><td class="empty">Haplotype Short</td><td></td></tr>
-				<%else%>
-					<tr><td class=nempty>Haplotype Short</td><td>  <%= m.haplotype_short %> </td></tr>
-				<%end%>
-			<%end%>
-		<%end%>
-		
-		<%if @sample.genders.blank? %>
-				<tr><td class="empty">Sexing Date</td><td></td></tr>
-				<tr><td class="empty">Gender</td><td></td></tr>
-		<%else%>
-			<% @sample.genders.each do |g| %>
-				<%if g.date_genotyped.blank? %>
-					<tr><td class="empty">Sexing Date</td><td></td></tr>
-				<%else%>		
-					<tr><td class="nempty">Sexing Date</td><td>  <%= nice_date_display(g.date_genotyped) %> </td></tr>
-				<%end%>
-				<%if g.gender.blank? %>
-					<tr><td class="empty">Gender</td><td></td></tr>
-				<%else%>
-					<tr><td class="nempty">Gender</td><td><%= g.gender %></td></tr>
-				<%end%>
-			<%end%>
-		<%end%>
-
-		<%if @sample.current_location.blank?%>
-			<tr><td class="empty">Current Location</td></td><td><%= @sample.current_location %></td>
-		<%else%>
-			<tr><td class="nempty">Current Location</td></td><td><%= @sample.current_location %></td>
+			<tr><td class="nempty">Maple Leaf Duplicate</td></td><td><%= @sample.chicken_ml_duplicate %></td>
 		<%end%>
 
 		<%if @sample.comments.blank?%>
-			<tr><td class="empty">Comments</td></td><td><%= @sample.comments %></td>
+			<tr><td class="empty">Additional Information</td><td ><%= @sample.comments %></td></tr>
 		<%else%>
-			<tr><td class="nempty">Comments</td></td><td><%= @sample.comments %></td>
+			<tr><td class="nempty">Additional Information</td><td ><%= @sample.comments %></td></tr>
 		<%end%>
 
-	  	<%if @sample.profiling_date.blank?%>
-			<tr><td class="empty">Profiling Date</td></td><td><%= nice_date_display(@sample.profiling_date) %></td>
-		<%else%>
-			<tr><td class="nempty">Profiling Date</td></td><td><%= nice_date_display(@sample.profiling_date) %></td>
-		<%end%>
-	  	
-		<%if @sample.profiling_completed.blank?%>
-			<tr><td class="empty">Profiling Completed</td></td><td><%= @sample.profiling_completed.yesno %></td>
-		<%else%>
-			<tr><td class="nempty">Profiling Completed</td></td><td><%= @sample.profiling_completed.yesno %></td>
-		<%end%>
-</div>
-
+</table>
 </table>
