@@ -39,7 +39,6 @@ class Emailer < ActionMailer::Base
       @body["email"] = recipient
       @body["project_id"] = project_id
       @body["date_collected"] = date_collected
-      
       @headers = {content_type => 'text/html'}
    end
 
