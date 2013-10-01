@@ -24,13 +24,12 @@ vertical-align:top;
 
 <h2>Chicken Sample Listing in 'Date Submitted' order for <%= current_user.to_s  %></h2>
 <h2>Click on EDIT or TRACK </h2>
-
+ 
 <table width="750" height="100" border="1" align="center" cellpadding = "1" >
   <tr height=20>
 	<th width=100>Date Collected</th>
-	<th width=100>Field Code</th>
+	<th width=100>Collected By</th>
 	<th width=100>Bar Code</th>
-	<th width=100>Field Ident</th>
 	<th width=150>Comments</th>
 	<th width=100>ACTION</th>
 	<th width=100>ACTION</th>
@@ -39,9 +38,8 @@ vertical-align:top;
 <% for sample in @sample %>
  <tr height=30 >
   	<td width=100 height=20 ><%= nice_date_display(sample.date_collected) %>
-  	<td width=100 height=20 ><%= sample.field_code %>
+  	<td width=100 height=20 ><%= sample.collected_by %>
   	<td width=100 height=20 ><%= sample.sample_bc %>
-  	<td width=100 height=20 ><%= sample.field_ident %>
   	<td width=100 height=20 ><%= sample.comments %>
     <td width=100><%= link_to 'Edit', edit_sample_path(sample) %></td>
     <td width=100><%= link_to 'Track', sample %></td>
