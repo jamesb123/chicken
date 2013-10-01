@@ -40,7 +40,6 @@ Rails::Initializer.run do |config|
   # config.gem 'hoptoad_notifier'
   # config.gem "fastercsv"
   # config.gem "newrelic_rpm" 
-  # config.gem "csv-mapper"
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "fastercsv"  
   # config.gem "paperclip", :verion => "~> 2.7"

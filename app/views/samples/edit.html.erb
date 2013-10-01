@@ -32,12 +32,11 @@ text-align:left;
 	<h3><%= link_to 'Home', menu_path %></h3>
 <%end%>	
 <h2><b><font color=red>EDIT</font></b> Right Whale Sample <%=@sample.id %> for <%= current_user.to_s %></h2>
-
+ 
 <% form_for(@sample) do |f| %>
 	<%= f.error_messages %>
 	<tr><td  width="25%"><%= f.label :sample_bc, 'Sample Barcode' %></td><td><%= f.text_field :sample_bc %></td><td>bar code</td></tr>
-	<tr><td><%= f.label :date_collected %></td><td><%= f.text_field :date_collected,:value => f.object.date_collected.strftime('%Y-%m-%d')  unless f.object.date_collected.nil?  %></td><td>Default is today's date</td></tr>
-	<tr><td><%= f.label :date_collected %></td><td><%= f.calendar_date_select :date_collected %></td><td>The date sample was collected - click on calendar</td></tr>
+    <tr><td><%= f.label :date_collected %></td><td><%= f.calendar_date_select :date_collected %></td><td>The date sample was collected - click on calendar</td></tr>
 	<tr><td><%= f.label :collected_by, 'Contact Person'%></td><td width = "35%" ><%= f.text_field :collected_by %></td><td width = "40%" > Collected by</td></tr>
 	<tr><td><%= f.label :chicken_country, 'Country' %></td><td><%= f.collection_select( :chicken_country , Sample::CO, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Country of Origin</td></tr>
 	<tr><td><%= f.label :submitter_comments, 'Strain' %></td><td><%= f.collection_select( :submitter_comments , Sample::ST, :to_s, :to_s, {:include_blank => false, :prompt => true }, {"style" => "width:105px" } ) %></td><td>Strain</td></tr>

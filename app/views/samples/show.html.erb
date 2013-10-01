@@ -44,7 +44,7 @@ vertical-align:middle;
 <font color="red">Red Indicates Incomplete</font><p></p>
 	<table width="400" height="400" border="1px" cellspacing="2" cellpadding = "3">
 		<tr><th>Name</th><th>Value</th></tr>
-
+ 
 		<%if @sample.sample_bc.blank?%>
 			<tr><td class="empty">Sample Barcode</td></td><td><%= @sample.sample_bc %></td>
 		<%else%>
@@ -56,6 +56,12 @@ vertical-align:middle;
 		<%else%>
 			<tr><td class="nempty">Date Collected</td><td align=left><%= nice_date_display(@sample.date_collected) %></td></tr>
 		<%end%>
+        <%if @sample.collected_by.blank?%>
+            <tr><td class="empty">Collected By</td></td><td><%= @sample.collected_by %></td>
+        <%else%>
+            <tr><td class="nempty">Collected By</td></td><td><%= @sample.collected_by %></td>
+        <%end%>
+
 
 		<%if @sample.chicken_country.blank?%>
 			<tr><td class="empty">Chicken Country</td></td><td><%= @sample.chicken_country %></td>
