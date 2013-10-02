@@ -2,8 +2,7 @@
 <style type="text/css">
 table, td, th
 {
-border-collapse:collapse;	
-border:0px ;
+border:10px ;
 text-align:left;
 }
 th
@@ -15,22 +14,22 @@ color:black;
 </style>
 
 <body>
-<table width="1024" border="0">
+<table width="1024" border="10">
   <tr><td width=900 height="450" bgcolor="#FFFF66">
-	<table width="900" height="450" border="0" align="center" bordercolor="#FFFF66">
+	<table width="900" height="450" border="10" align="center" bordercolor="#FFFF66">
 	  	<tr><td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF">
 
-		<table width="800" height="169" border="0" >
-			<tr><td><h2>NRDPFC Chicken Sample Submission/Tracking</h2></td></tr>
+		<table width="400" height="169" border="10" bgcolor="#FFFF66">
+			<tr><td><h2>NRDPFC Road Runner Sample Submission/Tracking</h2></td></tr>
         	<tr>
-           	<th scope="col"><p><%= image_tag "chickens.jpg", :width => "900", :height => "169" %></p>
+           	<th scope="col"><p><%= image_tag "longrr.jpg", :width => "900", :height => "169" %></p>
            	</th>
          	</tr>
 
     	</table>
-        <table width="600" height="295" orderride border="0" borderstyle="hidden" align="center" cellspacing="1" >
-    			<tr><td colspan=3><h2>Menu for Chicken Samples (project 66)</h2></td></tr>
-	            <tr><td colspan=3><h3>For help please contact SOMEONE,  info@nrdpfc.ca</h2></td></tr>
+        <table width="600" height="295" border="10"  align="center" cellspacing="1" >
+    			<tr><td colspan=3><h2>Menu for Road Runner Samples</h2></td></tr>
+	            <tr><td colspan=3><h3>For help please contact Vythegi Srithayakumar, vsrithayakumar@nrdpfc.ca</h2></td></tr>
 	            <tr><td colspan=3><h3>Click on Link below for information regarding the permits needed to send sample to NRDPFC</h2></td></tr>
 				<tr><td colspan=3> Logged in as: <%= current_user.name%></td></tr>
 				<tr><td> <br></td></tr>
@@ -39,8 +38,6 @@ color:black;
 				<tr><td><%= link_to 'Batch Entry Samples', imports_path %></td><td>Click here to Import Samples</td></tr>
 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
 				<tr><td><%= error_messages_for :user %></td></tr>
-				<tr><td> <br></td></tr><tr><td colspan=2><a href="Checklist for Collecting Necropsy Samples for Genetic Profiling at Trent University.pdf">Checklist for Collecting Necropsy Samples for Genetic Profiling at Trent University</a></td></tr>
-    			<tr><td> <br> </td></tr><tr><td colspan=2><a href="importexport.pdf">Importing and Exporting Samples for Scientific Research</a></td></tr>
           </table>
           <p align="left">&nbsp;</p>
           <p align="left">&nbsp;</p>

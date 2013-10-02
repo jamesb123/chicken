@@ -23,9 +23,9 @@ vertical-align:middle;
 	<table width="900" height="500" border="0" align="center" bordercolor="#ABBCD8">
 	  <tr><td width="900" height=500" align="center" valign="top" bgcolor="#FFFFFF">
 			<table width="900" height="169" border="0">
-			<tr><td><h2>NRDPFC Chicken Sample Submission/Tracking</h2></td></tr>
+			<tr><td><h2>NRDPFC Road Runner Sample Submission/Tracking</h2></td></tr>
           <tr>
-            <th scope="col"><p><%= image_tag "chickens.jpg", :width => "900", :height => "169" %></p>
+            <th scope="col"><p><%= image_tag "longrr.jpg", :width => "900", :height => "169" %></p>
               </th>
           </tr>
         </table>
@@ -39,7 +39,7 @@ vertical-align:middle;
 	<h3><%= link_to 'Home', menu_path %></h3>
 <%end%>	
 
-<h2>Right Whale Sample <%=@sample.id %> Submitted <%= nice_date_display(@sample.date_submitted) %> by <%= current_user.to_s %></h2>
+<h2>Road Runner Sample <%=@sample.id %> Submitted <%= nice_date_display(@sample.date_submitted) %> by <%= current_user.to_s %></h2>
 <font color="green">Green Indicates Complete</font>
 <font color="red">Red Indicates Incomplete</font><p></p>
 	<table width="400" height="400" border="1px" cellspacing="2" cellpadding = "3">

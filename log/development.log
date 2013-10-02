@@ -23,3 +23,1849 @@ Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 11:13:23) [GET]
 Rendering template within layouts/samples
 Rendering samples/menu
 Completed in 364ms (View: 293, DB: 30) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-01 12:17:01) [GET]
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Load (310.0ms)[0m   [0mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;36;1mSample Columns (24.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mGender Load (153.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882)) [0m
+  [4;36;1mDnaResult Load (87.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882)) [0m
+  [4;35;1mMtDna Load (166.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 984ms (View: 56, DB: 759) | 200 OK [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#edit (for 127.0.0.1 at 2013-10-01 12:17:07) [GET]
+  Parameters: {"id"=>"183882"}
+  [4;35;1mUser Columns (27.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183882) [0m
+Rendering template within layouts/samples
+Rendering samples/edit
+Completed in 234ms (View: 128, DB: 44) | 200 OK [http://localhost/samples/183882/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#update (for 127.0.0.1 at 2013-10-01 12:17:16) [PUT]
+  Parameters: {"id"=>"183882", "sample"=>{"chicken_country"=>"", "sample_bc"=>"test date collected again", "chicken_feathering"=>"", "collector_comments"=>"", "submitter_comments"=>"", "project_id"=>"66", "chicken_ml_duplicate"=>"", "chicken_declared_gender"=>"", "comments"=>"", "date_collected"=>"2013-09-17", "remote_data_entry"=>"true", "user_id"=>"68", "chicken_meat_part"=>"", "collected_by"=>"", "submitted_by"=>"Thomas Tester"}, "commit"=>"Update"}
+  [4;36;1mUser Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (0.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 183882) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3008/samples/183882
+Completed in 106ms (DB: 41) | 302 Found [http://localhost/samples/183882]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-01 12:17:16) [GET]
+  Parameters: {"id"=>"183882"}
+  [4;35;1mUser Columns (55.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183882) [0m
+  [4;35;1mGender Load (0.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183882) [0m
+  [4;36;1mDnaResult Load (0.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183882) [0m
+  [4;35;1mMtDna Load (1.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183882) [0m
+  [4;36;1mOrganization Columns (37.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 201ms (View: 13, DB: 110) | 200 OK [http://localhost/samples/183882]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 12:17:22) [GET]
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 66ms (View: 24, DB: 19) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-01 16:40:43) [GET]
+  [4;36;1mUser Columns (32.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (48.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 254ms (View: 116, DB: 82) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-01 16:40:48) [POST]
+  Parameters: {"sample"=>{"chicken_country"=>"", "sample_bc"=>"", "chicken_feathering"=>"", "collector_comments"=>"", "submitter_comments"=>"", "project_id"=>"66", "chicken_ml_duplicate"=>"", "chicken_declared_gender"=>"", "comments"=>"", "date_collected"=>"2013-10-01", "remote_data_entry"=>"true", "user_id"=>"68", "chicken_meat_part"=>"", "collected_by"=>"", "submitted_by"=>"Thomas Tester"}, "commit"=>"Create"}
+  [4;36;1mUser Columns (25.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (0.0ms)[0m   [0;1mINSERT INTO `samples` (`chicken_meat_part`, `location_3`, `chicken_declared_gender`, `chicken_country`, `shipping_date`, `approved`, `collected_on_month`, `profiling_completed`, `sample_image1`, `profile_published`, `profiling_date`, `publication_name`, `submitted_by`, `platebc`, `remote_data_entry`, `type_lat_long`, `date_received`, `condition`, `batch_number`, `organism_index`, `storage_medium_id`, `sample_bc_prv`, `chicken_ml_duplicate`, `export_permit`, `chicken_feathering`, `profiling_funded_by`, `storage_medium_text`, `chicken_company`, `diet_analysis`, `project_id`, `organization_text`, `location_2`, `extraction_date`, `extraction_method_id`, `storage_fridge`, `original_tissue_type`, `tissue_remaining`, `profiling_done_by`, `text_tissue_type`, `coordinate_system`, `locality_comments`, `collected_by`, `survey_id`, `location_measurement_method`, `collected_on_day`, `country`, `country_id`, `organism_id`, `organization_id`, `xy_position`, `location_accuracy`, `shippingmaterial_id`, `storage_box`, `sample_bc`, `shipping_material_txt_prv`, `discrepancy`, `location_4`, `current_location`, `comments`, `storage_building`, `sighting_id`, `rehydrated`, `true_longitude`, `receiver_comments`, `date_submitted`, `field_ident`, `submitter_comments`, `locality_type_id`, `dna_extracted`, `discrepancy_comments`, `photo_id`, `storage_room`, `location_1`, `latitude`, `received_by_trent`, `field_code`, `collector_comments`, `true_latitude`, `province`, `tissue_type_id`, `province_id`, `locality_type_text`, `age`, `collected_on_year`, `import_permit`, `longitude`, `locality`, `plateposition`, `received_by`, `date_collected`, `user_id`) VALUES('', NULL, '', '', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, '', NULL, NULL, NULL, NULL, 66, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2013-10-01', '68')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Tue, 1 Oct 2013 16:40:48 -0400
+From: info@nrdpfc.ca
+Reply-To: mmoeyaert@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by 
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+	</head>
+	<body>
+	</body>
+</html>
+Redirected to http://localhost:3008/samples/183884
+Completed in 1937ms (DB: 37) | 302 Found [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-01 16:40:50) [GET]
+  Parameters: {"id"=>"183884"}
+  [4;35;1mUser Columns (68.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (167.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183884) [0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183884) [0m
+  [4;36;1mDnaResult Load (0.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183884) [0m
+  [4;35;1mMtDna Load (0.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183884) [0m
+  [4;36;1mOrganization Columns (52.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 463ms (View: 14, DB: 290) | 200 OK [http://localhost/samples/183884]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 16:48:52) [GET]
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 88ms (View: 9, DB: 19) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-01 16:48:54) [GET]
+  [4;36;1mUser Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (3.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;35;1mSample Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884)) [0m
+  [4;35;1mDnaResult Load (1.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884)) [0m
+  [4;36;1mMtDna Load (0.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 137ms (View: 26, DB: 35) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#edit (for 127.0.0.1 at 2013-10-01 16:48:57) [GET]
+  Parameters: {"id"=>"183882"}
+  [4;36;1mUser Columns (21.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (0.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 183882) [0m
+Rendering template within layouts/samples
+Rendering samples/edit
+Completed in 113ms (View: 38, DB: 31) | 200 OK [http://localhost/samples/183882/edit]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#update (for 127.0.0.1 at 2013-10-01 16:49:26) [PUT]
+  Parameters: {"id"=>"183882", "sample"=>{"chicken_country"=>"Canada", "sample_bc"=>"test date collected again", "chicken_feathering"=>"Fast Feather", "collector_comments"=>"Commercial", "submitter_comments"=>"Bovain", "project_id"=>"66", "chicken_ml_duplicate"=>"Yes", "chicken_declared_gender"=>"Female", "comments"=>"2", "date_collected"=>"2013-09-17", "remote_data_entry"=>"true", "user_id"=>"68", "chicken_meat_part"=>"Boneless, Skinless Breast", "collected_by"=>"1", "submitted_by"=>"Thomas Tester"}, "commit"=>"Update"}
+  [4;35;1mUser Columns (35.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183882) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Update (1.0ms)[0m   [0;1mUPDATE `samples` SET `comments` = '2', `chicken_declared_gender` = 'Female', `collector_comments` = 'Commercial', `chicken_feathering` = 'Fast Feather', `collected_by` = '1', `chicken_country` = 'Canada', `chicken_meat_part` = 'Boneless, Skinless Breast', `chicken_ml_duplicate` = 'Yes', `submitter_comments` = 'Bovain' WHERE `id` = 183882[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3008/samples/183882
+Completed in 92ms (DB: 50) | 302 Found [http://localhost/samples/183882]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-01 16:49:26) [GET]
+  Parameters: {"id"=>"183882"}
+  [4;35;1mUser Columns (20.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183882) [0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183882) [0m
+  [4;36;1mDnaResult Load (0.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183882) [0m
+  [4;35;1mMtDna Load (1.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183882) [0m
+  [4;36;1mOrganization Columns (14.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 125ms (View: 8, DB: 49) | 200 OK [http://localhost/samples/183882]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 16:49:36) [GET]
+  [4;35;1mUser Columns (41.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 101ms (View: 17, DB: 42) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 16:50:03) [GET]
+  [4;36;1mUser Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 50ms (View: 13, DB: 19) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2013-10-01 16:50:07) [GET]
+  [4;35;1mUser Columns (25.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3008/account/login
+Completed in 66ms (DB: 26) | 302 Found [http://localhost/account/logout]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-01 16:50:14) [GET]
+Rendering account/login
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-01 16:50:39) [GET]
+Rendering account/login
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-01 16:57:39) [GET]
+Rendering account/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-01 16:57:41) [POST]
+  Parameters: {"commit"=>"Log in", "password"=>"nrdpfc", "login"=>"tester"}
+  [4;35;1mUser Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3008/menu?notice=Logged+in+successfully
+Completed in 66ms (DB: 26) | 302 Found [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 16:57:41) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (68.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 126ms (View: 18, DB: 69) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-01 16:57:47) [GET]
+  [4;35;1mUser Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Load (3.0ms)[0m   [0mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;36;1mSample Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mGender Load (0.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884)) [0m
+  [4;36;1mDnaResult Load (1.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884)) [0m
+  [4;35;1mMtDna Load (0.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 164ms (View: 44, DB: 34) | 200 OK [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 16:57:52) [GET]
+  [4;35;1mUser Columns (85.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 163ms (View: 18, DB: 85) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 19:07:17) [GET]
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 107ms (View: 36, DB: 19) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 19:08:16) [GET]
+  [4;36;1mUser Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 64ms (View: 18, DB: 19) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-01 19:09:06) [GET]
+  [4;35;1mUser Columns (31.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 93ms (View: 27, DB: 33) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2013-10-01 19:31:33) [GET]
+  [4;36;1mUser Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3008/account/login
+Completed in 45ms (DB: 22) | 302 Found [http://localhost/account/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-01 19:31:39) [GET]
+Rendering account/login
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 10:28:45) [GET]
+Redirected to http://localhost:3008/account/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/menu]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:28:45) [GET]
+Rendering account/login
+Completed in 15ms (View: 12, DB: 1) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:28:49) [POST]
+  Parameters: {"login"=>"tester", "password"=>"nrdpfc", "commit"=>"Log in"}
+  [4;35;1mUser Columns (61.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3008/menu?notice=Logged+in+successfully
+Completed in 217ms (DB: 62) | 302 Found [http://localhost/account/login]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 10:28:49) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 164ms (View: 122, DB: 17) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 10:28:52) [GET]
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (305.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 540ms (View: 112, DB: 323) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 10:29:02) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"cp", "sample_bc"=>"bc", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (26.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (14.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (0.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, 'cp', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'bc', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 10:29:02 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by cp
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+	</head>
+	<body>
+	</body>
+</html>
+Redirected to http://localhost:3008/samples/183885
+Completed in 2188ms (DB: 43) | 302 Found [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 10:29:04) [GET]
+  Parameters: {"id"=>"183885"}
+  [4;36;1mUser Columns (23.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (0.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 183885) [0m
+  [4;36;1mGender Load (212.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183885) [0m
+  [4;35;1mDnaResult Load (110.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183885) [0m
+  [4;36;1mMtDna Load (189.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183885) [0m
+  [4;35;1mOrganization Columns (50.0ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.0ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 785ms (View: 28, DB: 595) | 200 OK [http://localhost/samples/183885]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 10:47:47) [GET]
+  [4;36;1mUser Columns (43.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 94ms (View: 11, DB: 43) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2013-10-02 10:47:52) [GET]
+  [4;35;1mUser Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3008/account/login
+Completed in 74ms (DB: 29) | 302 Found [http://localhost/account/logout]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:48:03) [GET]
+Rendering account/login
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:49:39) [GET]
+Rendering account/login
+Completed in 37ms (View: 33, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:49:59) [GET]
+Rendering account/login
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:53:03) [GET]
+Rendering account/login
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:54:14) [GET]
+Rendering account/login
+Completed in 16ms (View: 13, DB: 1) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:54:53) [GET]
+Rendering account/login
+Completed in 14ms (View: 12, DB: 1) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:55:41) [GET]
+Rendering account/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:56:37) [GET]
+Rendering account/login
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:57:24) [GET]
+Rendering account/login
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 10:59:23) [GET]
+Rendering account/login
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 11:00:07) [GET]
+Rendering account/login
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 11:00:32) [POST]
+  Parameters: {"login"=>"tester", "password"=>"nrdpfc", "commit"=>"Log in"}
+  [4;35;1mUser Columns (21.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3008/menu?notice=Logged+in+successfully
+Completed in 54ms (DB: 23) | 302 Found [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:00:32) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;36;1mUser Columns (21.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 60ms (View: 11, DB: 21) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:00:36) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (37.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 98ms (View: 17, DB: 38) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-02 11:00:41) [GET]
+  [4;36;1mUser Columns (23.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (28.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;35;1mSample Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;35;1mDnaResult Load (1.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;36;1mMtDna Load (1.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 298ms (View: 70, DB: 67) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:00:46) [GET]
+  [4;36;1mUser Columns (27.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 82ms (View: 16, DB: 28) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:01:25) [GET]
+  [4;35;1mUser Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 92ms (View: 31, DB: 24) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2013-10-02 11:01:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/smallRoadrunner.jpg" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:01:41) [GET]
+  [4;35;1mUser Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 131ms (View: 23, DB: 25) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:02:08) [GET]
+  [4;36;1mUser Columns (25.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 89ms (View: 27, DB: 25) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:05:45) [GET]
+  [4;35;1mUser Columns (28.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 88ms (View: 26, DB: 29) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#logout (for 127.0.0.1 at 2013-10-02 11:06:51) [GET]
+  [4;36;1mUser Columns (21.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3008/account/login
+Completed in 47ms (DB: 23) | 302 Found [http://localhost/account/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 11:06:51) [GET]
+Rendering account/login
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 11:07:13) [GET]
+Rendering account/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 11:11:17) [GET]
+Rendering account/login
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 11:11:44) [GET]
+Rendering account/login
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 11:26:26) [GET]
+Rendering account/login
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/account/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2013-10-02 11:26:29) [POST]
+  Parameters: {"login"=>"tester", "password"=>"nrdpfc", "commit"=>"Log in"}
+  [4;36;1mUser Columns (24.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'tester') LIMIT 1[0m
+Redirected to http://localhost:3008/menu?notice=Logged+in+successfully
+Completed in 70ms (DB: 25) | 302 Found [http://localhost/account/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:26:29) [GET]
+  Parameters: {"notice"=>"Logged in successfully"}
+  [4;35;1mUser Columns (25.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 87ms (View: 26, DB: 26) | 200 OK [http://localhost/menu?notice=Logged+in+successfully]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-02 11:38:50) [GET]
+  [4;36;1mUser Columns (49.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (3.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;35;1mSample Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;35;1mDnaResult Load (1.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;36;1mMtDna Load (1.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 267ms (View: 43, DB: 68) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:38:54) [GET]
+  [4;36;1mUser Columns (41.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 163ms (View: 72, DB: 43) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 11:38:56) [GET]
+  [4;35;1mUser Columns (35.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (55.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 348ms (View: 105, DB: 91) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImportsController#index (for 127.0.0.1 at 2013-10-02 11:39:08) [GET]
+  [4;35;1mUser Columns (21.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/imports
+Rendering imports/index
+Completed in 143ms (View: 54, DB: 22) | 200 OK [http://localhost/imports]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-02 11:39:13) [GET]
+  [4;36;1mUser Columns (141.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (3.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;35;1mSample Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;35;1mDnaResult Load (0.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;36;1mMtDna Load (1.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 560ms (View: 43, DB: 159) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-02 11:42:25) [GET]
+  [4;36;1mUser Columns (31.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (4.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;35;1mSample Columns (22.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;35;1mDnaResult Load (1.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;36;1mMtDna Load (1.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 211ms (View: 47, DB: 61) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 11:42:37) [GET]
+  [4;36;1mUser Columns (27.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 84ms (View: 14, DB: 28) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 11:42:45) [GET]
+  [4;35;1mUser Columns (30.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 166ms (View: 32, DB: 50) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImportsController#index (for 127.0.0.1 at 2013-10-02 11:44:47) [GET]
+  [4;35;1mUser Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/imports
+Rendering imports/index
+Completed in 81ms (View: 19, DB: 30) | 200 OK [http://localhost/imports]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImportsController#index (for 127.0.0.1 at 2013-10-02 11:45:58) [GET]
+  [4;36;1mUser Columns (22.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/imports
+Rendering imports/index
+Completed in 86ms (View: 19, DB: 24) | 200 OK [http://localhost/imports]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 12:08:01) [GET]
+  [4;35;1mUser Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 101ms (View: 16, DB: 19) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 12:08:40) [GET]
+  [4;36;1mUser Columns (33.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 95ms (View: 19, DB: 33) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 12:09:17) [GET]
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 71ms (View: 25, DB: 18) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 12:09:46) [GET]
+  [4;36;1mUser Columns (57.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 104ms (View: 19, DB: 58) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 12:25:22) [GET]
+  [4;35;1mUser Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 64ms (View: 17, DB: 20) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 12:25:39) [GET]
+  [4;36;1mUser Columns (21.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 74ms (View: 22, DB: 21) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 12:26:04) [GET]
+  [4;35;1mUser Columns (26.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 161ms (View: 27, DB: 26) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 12:26:30) [GET]
+  [4;36;1mUser Columns (21.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 79ms (View: 29, DB: 21) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-02 12:59:39) [GET]
+  [4;35;1mUser Columns (25.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Load (4.0ms)[0m   [0mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;36;1mSample Columns (17.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;36;1mDnaResult Load (1.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;35;1mMtDna Load (1.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 237ms (View: 55, DB: 49) | 200 OK [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 12:59:41) [GET]
+  Parameters: {"id"=>"183855"}
+  [4;35;1mUser Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (0.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183855) [0m
+  [4;35;1mGender Load (0.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183855) [0m
+  [4;36;1mDnaResult Load (0.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183855) [0m
+  [4;35;1mMtDna Load (1.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183855) [0m
+  [4;36;1mOrganization Columns (34.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 180ms (View: 28, DB: 64) | 200 OK [http://localhost/samples/183855]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 13:02:00) [GET]
+  Parameters: {"id"=>"183855"}
+  [4;35;1mUser Columns (21.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183855) [0m
+  [4;35;1mGender Load (0.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183855) [0m
+  [4;36;1mDnaResult Load (0.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183855) [0m
+  [4;35;1mMtDna Load (1.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183855) [0m
+  [4;36;1mOrganization Columns (14.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (1.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 166ms (View: 27, DB: 48) | 200 OK [http://localhost/samples/183855]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 13:15:02) [GET]
+  Parameters: {"id"=>"183855"}
+  [4;35;1mUser Columns (20.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (0.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183855) [0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183855) [0m
+  [4;36;1mDnaResult Load (1.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183855) [0m
+  [4;35;1mMtDna Load (1.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183855) [0m
+  [4;36;1mOrganization Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 235ms (View: 28, DB: 55) | 200 OK [http://localhost/samples/183855]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 13:15:25) [GET]
+  Parameters: {"id"=>"183855"}
+  [4;35;1mUser Columns (22.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183855) [0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183855) [0m
+  [4;36;1mDnaResult Load (1.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183855) [0m
+  [4;35;1mMtDna Load (0.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183855) [0m
+  [4;36;1mOrganization Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (1.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 185ms (View: 23, DB: 59) | 200 OK [http://localhost/samples/183855]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 13:15:52) [GET]
+  [4;35;1mUser Columns (43.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 93ms (View: 16, DB: 44) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#index (for 127.0.0.1 at 2013-10-02 13:15:58) [GET]
+  [4;36;1mUser Columns (36.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Load (4.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (project_id = 66 and remote_data_entry = true and user_id = '68') ORDER BY date_collected[0m
+  [4;35;1mSample Columns (50.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;35;1mDnaResult Load (1.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+  [4;36;1mMtDna Load (1.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id IN (183855,183874,183875,183876,183877,183879,183881,183883,183882,183884,183885)) [0m
+Rendering template within layouts/samples
+Rendering samples/index
+Completed in 339ms (View: 106, DB: 93) | 200 OK [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 13:29:29) [GET]
+  [4;36;1mUser Columns (32.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 69ms (View: 11, DB: 32) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 13:29:34) [GET]
+  [4;35;1mUser Columns (39.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (13.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 175ms (View: 38, DB: 53) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 13:29:53) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"contact person", "sample_bc"=>"test bar code", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (29.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (0.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, 'contact person', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'test bar code', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 13:29:53 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by contact person
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+	</head>
+	<body>
+	</body>
+</html>
+Redirected to http://localhost:3008/samples/183887
+Completed in 1663ms (DB: 41) | 302 Found [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 13:29:54) [GET]
+  Parameters: {"id"=>"183887"}
+  [4;36;1mUser Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (1.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 183887) [0m
+  [4;36;1mGender Load (0.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183887) [0m
+  [4;35;1mDnaResult Load (0.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183887) [0m
+  [4;36;1mMtDna Load (0.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183887) [0m
+  [4;35;1mOrganization Columns (23.0ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (1.0ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 152ms (View: 10, DB: 66) | 200 OK [http://localhost/samples/183887]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 13:32:08) [GET]
+  [4;36;1mUser Columns (19.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 48ms (View: 8, DB: 19) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImportsController#index (for 127.0.0.1 at 2013-10-02 13:32:11) [GET]
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/imports
+Rendering imports/index
+Completed in 99ms (View: 8, DB: 19) | 200 OK [http://localhost/imports]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImportsController#import (for 127.0.0.1 at 2013-10-02 13:32:22) [POST]
+  Parameters: {"commit"=>"Import Batch File", "import_file"=>#<File:C:/Users/James/AppData/Local/Temp/RackMultipart20131002-6960-sswn90-0>}
+  [4;36;1mUser Columns (42.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (89.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (1.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES('pid1', NULL, NULL, NULL, NULL, NULL, '1301', NULL, NULL, 'fc1', NULL, 'CA027', '10US19812A/9', NULL, NULL, 'this is the NOAA archive sample. It is small, therefore the whole sample is being submitted. There is no other sample for this sighting @NEFSC', NULL, NULL, 0, 'NEFSC', NULL, NULL, '2013-06-14', 'Lisa Conger', NULL, NULL, NULL, NULL, 66, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'nsa1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'S000033610', NULL, NULL, NULL, NULL, NULL, NULL, 'Skin', NULL, NULL, NULL, NULL, NULL, '2013-10-02-13-32-22', NULL, NULL, NULL, 68, NULL, NULL, '10', '2008', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (1.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES('pid2', NULL, NULL, NULL, NULL, NULL, '1103', NULL, NULL, 'fc2', NULL, 'CA027', '10US19812A/9', NULL, NULL, 'comment 2', NULL, NULL, 0, 'Trent', NULL, NULL, '2013-06-14', 'Lisa Conger', NULL, NULL, NULL, NULL, 66, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'nsa2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'S000033611', NULL, NULL, NULL, NULL, NULL, NULL, 'Skin', NULL, NULL, NULL, NULL, NULL, '2013-10-02-13-32-22', NULL, NULL, NULL, 68, NULL, NULL, '25', '2008', '5', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (1.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES('pid3', NULL, NULL, NULL, NULL, NULL, '2240', NULL, NULL, 'fc3', NULL, 'CA027', '10US19812A/9', NULL, NULL, 'comment 3', NULL, NULL, 0, 'Trent', NULL, NULL, '2013-06-14', 'Lisa Conger', NULL, NULL, NULL, NULL, 66, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ns3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'S000033588', NULL, NULL, NULL, NULL, NULL, NULL, 'Skin', NULL, NULL, NULL, NULL, NULL, '2013-10-02-13-32-22', NULL, NULL, NULL, 68, NULL, NULL, '21', '2004', '4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 13:32:22 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: Project 66: 3 Batch Samples Submitted - Batch Number 2013-10-02-13-32-22 by Thomas Tester
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary=mimepart_524c58a6a50a2_1b30486aca436d
+
+
+--mimepart_524c58a6a50a2_1b30486aca436d
+Content-Type: text/html; charset=utf-8
+Content-Disposition: inline
+
+Project 66: 3 Batch Samples Submitted - Batch Number 2013-10-02-13-32-22 by Thomas Tester
+--mimepart_524c58a6a50a2_1b30486aca436d
+Content-Type: multipart/mixed; boundary=mimepart_524c58a6a5c5a_1b30486aca44ca
+
+
+--mimepart_524c58a6a5c5a_1b30486aca44ca
+Content-Type: csv/text; name=Whale_Batch.csv
+Content-Transfer-Encoding: Base64
+Content-Disposition: attachment; filename=Whale_Batch.csv
+
+U3VibWl0dGVkIEJ5LFNoaXBwaW5nIERhdGUsRGF0ZSBTdWJtaXR0ZWQsRmll
+bGQgQ29kZSxOZWNyb3NweSBTYW1wbGUgTnVtYmVyLFNhbXBsZSBCYyxQaG90
+byBJRCxGaWVsZCBJZGVudCxDb2xsZWN0ZWRfT25fRGF5LENvbGxlY3RlZCBP
+biBNb250aCxDb2xsZWN0ZWQgT24gWWVhcixDb2xsZWN0ZWQgQnksVGV4dCBU
+aXNzdWUgVHlwZSxFeHBvcnQgUGVybWl0LEltcG9ydCBQZXJtaXQsQ3VycmVu
+dCBMb2NhdGlvbixDb21tZW50cwpMaXNhIENvbmdlciwsNi8xNC8yMDEzLGZj
+MSxuc2ExLFMwMDAwMzM2MTAscGlkMSwxMzAxLDEwLDEsMjAwOCwsU2tpbiwx
+MFVTMTk4MTJBLzksQ0EwMjcsTkVGU0MsInRoaXMgaXMgdGhlIE5PQUEgYXJj
+aGl2ZSBzYW1wbGUuIEl0IGlzIHNtYWxsLCB0aGVyZWZvcmUgdGhlIHdob2xl
+IHNhbXBsZSBpcyBiZWluZyBzdWJtaXR0ZWQuIFRoZXJlIGlzIG5vIG90aGVy
+IHNhbXBsZSBmb3IgdGhpcyBzaWdodGluZyBATkVGU0MiCkxpc2EgQ29uZ2Vy
+LCw2LzE0LzIwMTMsZmMyLG5zYTIsUzAwMDAzMzYxMSxwaWQyLDExMDMsMjUs
+NSwyMDA4LCxTa2luLDEwVVMxOTgxMkEvOSxDQTAyNyxUcmVudCxjb21tZW50
+IDIKTGlzYSBDb25nZXIsLDYvMTQvMjAxMyxmYzMsbnMzLFMwMDAwMzM1ODgs
+cGlkMywyMjQwLDIxLDQsMjAwNCwsU2tpbiwxMFVTMTk4MTJBLzksQ0EwMjcs
+VHJlbnQsY29tbWVudCAzCg==
+
+--mimepart_524c58a6a5c5a_1b30486aca44ca--
+
+--mimepart_524c58a6a50a2_1b30486aca436d--
+Rendering template within layouts/imports
+Rendering imports/show
+Completed in 1508ms (View: 7, DB: 138) | 200 OK [http://localhost/imports/import]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 13:34:50) [GET]
+  [4;35;1mUser Columns (23.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 60ms (View: 9, DB: 24) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 13:34:52) [GET]
+  [4;36;1mUser Columns (39.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (36.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 330ms (View: 87, DB: 75) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 13:34:54) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;36;1mUser Columns (27.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (41.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (14.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+
+TypeError (can't convert Fixnum into String):
+  app/models/emailer.rb:39:in `+'
+  app/models/emailer.rb:39:in `submission'
+  app/controllers/samples_controller.rb:66:in `create'
+  app/controllers/samples_controller.rb:64:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 13:35:32) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (17.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (1.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+
+IndexError (string not matched):
+  app/models/emailer.rb:40:in `[]='
+  app/models/emailer.rb:40:in `submission'
+  app/controllers/samples_controller.rb:66:in `create'
+  app/controllers/samples_controller.rb:64:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (77.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 13:35:59) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;36;1mUser Columns (22.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (1.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 13:35:59 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by 
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+test99
+Redirected to http://localhost:3008/samples/183893
+Completed in 1315ms (DB: 34) | 302 Found [http://localhost/samples]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 13:36:01) [GET]
+  Parameters: {"id"=>"183893"}
+  [4;35;1mUser Columns (26.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (52.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183893) [0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183893) [0m
+  [4;36;1mDnaResult Load (1.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183893) [0m
+  [4;35;1mMtDna Load (0.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183893) [0m
+  [4;36;1mOrganization Columns (57.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 335ms (View: 15, DB: 140) | 200 OK [http://localhost/samples/183893]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 13:37:27) [GET]
+  [4;35;1mUser Columns (44.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 76ms (View: 11, DB: 44) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 13:37:28) [GET]
+  [4;36;1mUser Columns (19.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (13.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 178ms (View: 39, DB: 32) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 13:37:33) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"2", "sample_bc"=>"1", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;36;1mUser Columns (45.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (59.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (0.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+
+ArgumentError (wrong number of arguments (8 for 6)):
+  app/models/sample.rb:31:in `send_sample_mail'
+  app/controllers/samples_controller.rb:65:in `create'
+  app/controllers/samples_controller.rb:64:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (95.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 13:38:14) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"2", "sample_bc"=>"1", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (9.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (0.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+Sent mail to james@burrett.org
+
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+Thomas Testertest99
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 13:38:15 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by 2
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+2test99
+Redirected to http://localhost:3008/samples/183895
+Completed in 2148ms (DB: 28) | 302 Found [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 13:38:17) [GET]
+  Parameters: {"id"=>"183895"}
+  [4;36;1mUser Columns (40.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (46.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (0.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 183895) [0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183895) [0m
+  [4;35;1mDnaResult Load (1.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183895) [0m
+  [4;36;1mMtDna Load (0.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183895) [0m
+  [4;35;1mOrganization Columns (60.0ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (1.0ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 282ms (View: 16, DB: 149) | 200 OK [http://localhost/samples/183895]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 14:17:39) [GET]
+  [4;36;1mUser Columns (24.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 69ms (View: 12, DB: 24) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 14:17:40) [GET]
+  [4;35;1mUser Columns (22.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 136ms (View: 28, DB: 42) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:17:48) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"cp", "sample_bc"=>"sbc", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (36.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (17.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (1.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, 'cp', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'sbc', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+
+NoMethodError (undefined method `submitted_by' for #<Emailer:0x91d3838>):
+  app/models/emailer.rb:39:in `submission'
+  app/controllers/samples_controller.rb:66:in `create'
+  app/controllers/samples_controller.rb:64:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (73.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:19:49) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"cp", "sample_bc"=>"sbc", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;36;1mUser Columns (85.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (1.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, 'cp', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'sbc', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+
+NoMethodError (undefined method `submitted' for #<Emailer:0x8fbbf30>):
+  app/models/emailer.rb:39:in `submission'
+  app/controllers/samples_controller.rb:66:in `create'
+  app/controllers/samples_controller.rb:64:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (101.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:21:35) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (30.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (0.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+
+NoMethodError (undefined method `collected_by' for #<Emailer:0x9124320>):
+  app/models/emailer.rb:39:in `submission'
+  app/controllers/samples_controller.rb:66:in `create'
+  app/controllers/samples_controller.rb:64:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (72.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:22:21) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;36;1mUser Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (1.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 14:22:21 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by 
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+66
+Redirected to http://localhost:3008/samples/183899
+Completed in 1564ms (DB: 38) | 302 Found [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 14:22:23) [GET]
+  Parameters: {"id"=>"183899"}
+  [4;35;1mUser Columns (25.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (12.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183899) [0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183899) [0m
+  [4;36;1mDnaResult Load (1.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183899) [0m
+  [4;35;1mMtDna Load (0.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183899) [0m
+  [4;36;1mOrganization Columns (22.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (0.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 215ms (View: 14, DB: 62) | 200 OK [http://localhost/samples/183899]
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 14:23:32) [GET]
+  [4;35;1mUser Columns (31.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 72ms (View: 9, DB: 47) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 14:23:35) [GET]
+  [4;36;1mUser Columns (21.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 154ms (View: 54, DB: 32) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:23:36) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;36;1mUser Columns (24.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (13.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (1.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 14:23:37 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by Thomas Tester
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+66
+Redirected to http://localhost:3008/samples/183900
+Completed in 1167ms (DB: 39) | 302 Found [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 14:23:38) [GET]
+  Parameters: {"id"=>"183900"}
+  [4;35;1mUser Columns (23.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (17.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183900) [0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183900) [0m
+  [4;36;1mDnaResult Load (0.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183900) [0m
+  [4;35;1mMtDna Load (0.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183900) [0m
+  [4;36;1mOrganization Columns (39.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (1.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 254ms (View: 14, DB: 82) | 200 OK [http://localhost/samples/183900]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 14:25:25) [GET]
+  [4;35;1mUser Columns (26.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 67ms (View: 11, DB: 28) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 14:25:27) [GET]
+  [4;36;1mUser Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 169ms (View: 26, DB: 31) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:25:29) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;36;1mUser Columns (43.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (13.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (1.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 14:25:29 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by Thomas Tester
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+project 66submitted by Thomas Tester
+Redirected to http://localhost:3008/samples/183901
+Completed in 1080ms (DB: 59) | 302 Found [http://localhost/samples]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 14:25:30) [GET]
+  Parameters: {"id"=>"183901"}
+  [4;35;1mUser Columns (23.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (14.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSample Load (1.0ms)[0m   [0;1mSELECT * FROM `samples` WHERE (`samples`.`id` = 183901) [0m
+  [4;35;1mGender Load (1.0ms)[0m   [0mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183901) [0m
+  [4;36;1mDnaResult Load (1.0ms)[0m   [0;1mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183901) [0m
+  [4;35;1mMtDna Load (1.0ms)[0m   [0mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183901) [0m
+  [4;36;1mOrganization Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `organizations`[0m
+  [4;35;1mOrganization Load (1.0ms)[0m   [0mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 183ms (View: 11, DB: 60) | 200 OK [http://localhost/samples/183901]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 14:26:25) [GET]
+  [4;35;1mUser Columns (20.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 53ms (View: 10, DB: 21) | 200 OK [http://localhost/menu]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 14:26:26) [GET]
+  [4;36;1mUser Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 136ms (View: 28, DB: 36) | 200 OK [http://localhost/samples/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:26:29) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;36;1mUser Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSample Create (0.0ms)[0m   [0;1mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+
+TypeError (can't convert Date into String):
+  app/models/emailer.rb:39:in `+'
+  app/models/emailer.rb:39:in `submission'
+  app/controllers/samples_controller.rb:66:in `create'
+  app/controllers/samples_controller.rb:64:in `create'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  -e:2:in `load'
+  -e:2
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:26:53) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (21.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (1.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 14:26:53 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by 
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+Project 66submitted by Thomas Tester on 2013-10-02
+Redirected to http://localhost:3008/samples/183903
+Completed in 1123ms (DB: 49) | 302 Found [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 14:26:54) [GET]
+  Parameters: {"id"=>"183903"}
+  [4;36;1mUser Columns (22.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (14.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (1.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 183903) [0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183903) [0m
+  [4;35;1mDnaResult Load (1.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183903) [0m
+  [4;36;1mMtDna Load (1.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183903) [0m
+  [4;35;1mOrganization Columns (20.0ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.0ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 262ms (View: 14, DB: 61) | 200 OK [http://localhost/samples/183903]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 14:28:02) [GET]
+  [4;36;1mUser Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 56ms (View: 8, DB: 21) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 14:30:24) [GET]
+  [4;35;1mUser Columns (49.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 287ms (View: 72, DB: 66) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:30:27) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"", "sample_bc"=>"", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (40.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (1.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 14:30:27 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by Thomas Tester
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+Road Runner Project 66 collected by  on 2013-10-02
+Redirected to http://localhost:3008/samples/183904
+Completed in 1256ms (DB: 57) | 302 Found [http://localhost/samples]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 14:30:29) [GET]
+  Parameters: {"id"=>"183904"}
+  [4;36;1mUser Columns (23.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (1.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 183904) [0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183904) [0m
+  [4;35;1mDnaResult Load (0.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183904) [0m
+  [4;36;1mMtDna Load (0.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183904) [0m
+  [4;35;1mOrganization Columns (17.0ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.0ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 189ms (View: 15, DB: 55) | 200 OK [http://localhost/samples/183904]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 14:31:06) [GET]
+  [4;36;1mUser Columns (24.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 55ms (View: 11, DB: 24) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#new (for 127.0.0.1 at 2013-10-02 14:31:07) [GET]
+  [4;35;1mUser Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (79.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+Rendering template within layouts/samples
+Rendering samples/new
+Completed in 276ms (View: 98, DB: 99) | 200 OK [http://localhost/samples/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#create (for 127.0.0.1 at 2013-10-02 14:31:21) [POST]
+  Parameters: {"commit"=>"Create", "sample"=>{"remote_data_entry"=>"true", "chicken_meat_part"=>"", "chicken_declared_gender"=>"", "user_id"=>"68", "chicken_ml_duplicate"=>"", "collected_by"=>"james burrett", "sample_bc"=>"bar code", "project_id"=>"66", "submitted_by"=>"Thomas Tester", "collector_comments"=>"", "date_collected"=>"2013-10-02", "comments"=>"", "chicken_feathering"=>"", "submitter_comments"=>"", "chicken_country"=>""}}
+  [4;35;1mUser Columns (19.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;35;1mSample Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `samples`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSample Create (1.0ms)[0m   [0mINSERT INTO `samples` (`photo_id`, `organization_text`, `chicken_ml_duplicate`, `location_measurement_method`, `dna_extracted`, `storage_box`, `field_ident`, `tissue_remaining`, `locality`, `field_code`, `locality_type_id`, `import_permit`, `export_permit`, `extraction_method_id`, `extraction_date`, `comments`, `received_by_trent`, `longitude`, `approved`, `current_location`, `organism_id`, `profiling_completed`, `date_submitted`, `submitted_by`, `locality_comments`, `location_2`, `received_by`, `date_collected`, `project_id`, `rehydrated`, `shipping_date`, `remote_data_entry`, `discrepancy`, `collected_by`, `chicken_declared_gender`, `storage_medium_text`, `plateposition`, `country`, `diet_analysis`, `locality_type_text`, `organism_index`, `shipping_material_txt_prv`, `storage_room`, `profiling_funded_by`, `type_lat_long`, `organization_id`, `location_4`, `collector_comments`, `sample_bc_prv`, `platebc`, `location_accuracy`, `true_longitude`, `sample_image1`, `chicken_feathering`, `xy_position`, `country_id`, `location_1`, `province`, `discrepancy_comments`, `sample_bc`, `tissue_type_id`, `coordinate_system`, `original_tissue_type`, `chicken_country`, `submitter_comments`, `date_received`, `text_tissue_type`, `publication_name`, `profile_published`, `storage_building`, `survey_id`, `receiver_comments`, `batch_number`, `profiling_date`, `profiling_done_by`, `sighting_id`, `user_id`, `shippingmaterial_id`, `location_3`, `collected_on_day`, `collected_on_year`, `collected_on_month`, `true_latitude`, `storage_medium_id`, `province_id`, `age`, `latitude`, `storage_fridge`, `condition`, `chicken_company`, `chicken_meat_part`) VALUES(NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, 'Thomas Tester', NULL, NULL, NULL, '2013-10-02', 66, NULL, NULL, 1, NULL, 'james burrett', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'bar code', NULL, NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '68', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+Sent mail to james@burrett.org
+
+Date: Wed, 2 Oct 2013 14:31:21 -0400
+From: info@nrdpfc.ca
+Reply-To: vsrithayakumar@nrdpfc.ca
+To: james@burrett.org
+Subject: New Sample Submitted by Thomas Tester
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Text/html: text/html
+
+Road Runner Project 66 collected by james burrett on 2013-10-02
+Redirected to http://localhost:3008/samples/183905
+Completed in 1031ms (DB: 32) | 302 Found [http://localhost/samples]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#show (for 127.0.0.1 at 2013-10-02 14:31:22) [GET]
+  Parameters: {"id"=>"183905"}
+  [4;36;1mUser Columns (22.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+  [4;36;1mSample Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `samples`[0m
+  [4;35;1mSample Load (0.0ms)[0m   [0mSELECT * FROM `samples` WHERE (`samples`.`id` = 183905) [0m
+  [4;36;1mGender Load (1.0ms)[0m   [0;1mSELECT `genders`.* FROM `genders` WHERE (`genders`.sample_id = 183905) [0m
+  [4;35;1mDnaResult Load (0.0ms)[0m   [0mSELECT `dna_results`.* FROM `dna_results` WHERE (`dna_results`.sample_id = 183905) [0m
+  [4;36;1mMtDna Load (1.0ms)[0m   [0;1mSELECT `mt_dnas`.* FROM `mt_dnas` WHERE (`mt_dnas`.sample_id = 183905) [0m
+  [4;35;1mOrganization Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `organizations`[0m
+  [4;36;1mOrganization Load (0.0ms)[0m   [0;1mSELECT * FROM `organizations` WHERE (`organizations`.`id` IS NULL) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/show
+Completed in 136ms (View: 8, DB: 53) | 200 OK [http://localhost/samples/183905]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SamplesController#menu (for 127.0.0.1 at 2013-10-02 15:14:48) [GET]
+  [4;36;1mUser Columns (23.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/samples
+Rendering samples/menu
+Completed in 96ms (View: 11, DB: 23) | 200 OK [http://localhost/menu]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ImportsController#index (for 127.0.0.1 at 2013-10-02 15:14:50) [GET]
+  [4;35;1mUser Columns (24.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 68) LIMIT 1[0m
+Rendering template within layouts/imports
+Rendering imports/index
+Completed in 71ms (View: 11, DB: 25) | 200 OK [http://localhost/imports]

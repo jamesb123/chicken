@@ -4,6 +4,7 @@ class Emailer < ActionMailer::Base
       @subject = subject
       @recipients = recipient
       @from = 'info@nrdpfc.ca'
+      @reply_to = "vsrithayakumar@nrdpfc.ca"
       @sent_on = sent_at
       @body["name"] = name
       @body["email"] = recipient
@@ -17,7 +18,7 @@ class Emailer < ActionMailer::Base
       @recipients = recipient_a
       @subject = subject_a
       @from =   "info@nrdpfc.ca"
-      @reply_to = "mmoeyaert@nrdpfc.ca"
+      @reply_to = "vsrithayakumar@nrdpfc.ca"
       @body = subject_a  
       part :content_type => "multipart/mixed" do |p|
       p.attachment :content_type => "csv/text", 
@@ -29,16 +30,13 @@ class Emailer < ActionMailer::Base
       end    
   end
   # email sent to single sample submission --------------------------------------
-  def submission(recipient, subject, name, project_id, date_collected, sent_at = Time.now)
-      @subject = subject
+  def submission(recipient, subject, collected_by, project_id, date_collected, sent_at = Time.now)
+      @subject = subject 
       @recipients = recipient
       @from = 'info@nrdpfc.ca'
-      @reply_to ='mmoeyaert@nrdpfc.ca'
+      @reply_to ='vsrithayakumar@nrdpfc.ca'
       @sent_on = sent_at
-      @body["name"] = name
-      @body["email"] = recipient
-      @body["project_id"] = project_id
-      @body["date_collected"] = date_collected
+      @body = "Road Runner Sample - Project " + project_id + " collected by " + collected_by + " on " + date_collected
       @headers = {content_type => 'text/html'}
    end
 

@@ -5,8 +5,10 @@ require "current_project_helpers"
 require "faster_csv"
 # require "csv-mapper"
 
+PAGERWIDTH=900
+
 BKGRND = "#FFFF66"
-#EMAIL_SAMPLES = "mmoeyaert@nrdpfc.ca, mharnden@nrdpfc.ca, info@nrdpfc.ca, james@burrett.org"
+#EMAIL_SAMPLES = "vsrithayakumar@nrdpfc.ca, mharnden@nrdpfc.ca, info@nrdpfc.ca, james@burrett.org"
  EMAIL_SAMPLES = "james@burrett.org"
  PROJECT_NUMBER = 66
 
