@@ -1,5 +1,5 @@
 class ImportsController < ApplicationController
-
+# ROAD RUNNER imports
 def index
       @messages =[]
       flash[:notice] = ''
@@ -78,22 +78,10 @@ def import
         return
       end
       @sample = Sample.new(
-      :submitted_by => row[0],
-      :shipping_date => row[1],
-      :date_submitted => row[2],
-      :field_code => row[3],
-      :organism_index => row[4],
-      :sample_bc => row[5], 
-      :photo_id => row[6],
-      :field_ident => row[7], 
-      :collected_on_day => row[8], 
-      :collected_on_month => row[9], 
-      :collected_on_year => row[10], 
-      :collected_by => row[11],
-      :text_tissue_type => row[12], 
-      :export_permit => row[13], 
-      :import_permit => row[14], 
-      :current_location => row[15], 
+      :sample_bc => row[0], 
+      :date_collected => row[2], 
+      :collected_by => row[3],
+      :chicken_country => row[4], 
       :comments => row[16]
       )
       # @sample.submitted_by =  current_user.name

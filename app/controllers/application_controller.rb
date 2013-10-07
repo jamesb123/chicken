@@ -1,13 +1,10 @@
-#CHICKENS
+# ROAD RUNNER CHICKENS
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 require "current_project_helpers"
 require "faster_csv"
 # require "csv-mapper"
 
-PAGERWIDTH=900
-
-BKGRND = "#FFFF66"
 #EMAIL_SAMPLES = "vsrithayakumar@nrdpfc.ca, mharnden@nrdpfc.ca, info@nrdpfc.ca, james@burrett.org"
  EMAIL_SAMPLES = "james@burrett.org"
  PROJECT_NUMBER = 66

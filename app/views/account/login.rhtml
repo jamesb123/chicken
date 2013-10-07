@@ -13,16 +13,15 @@ color:black;
 text-align:center;
 }
 </style>
-<table width="1024" border="0">
+<table width="1024" height="800" border="0" bgcolor=#000000>
   <tr>
-    <td width=900 height="450" bgcolor="#FFFF66">
-	<table width="900" height="450" border="0" align="center" bordercolor="#FFFF66">
-	  <tr><td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF">
+    <td width=900 height="550" bgcolor="#84ADB5">
+	<table width="900" height="450" border="0" align="center" valign="center" bordercolor="#84ADB5">
+	  <tr><td width="900" height="450" align="center" valign="center" bgcolor="#FFFFFF">
 
-		<table width="400" height="169" border="0" bgcolor="#FFFF66">
-			<tr ><td text-align:center><h2>NRDPFC - Chicken Sample Submission/Tracking</h2></td></tr>
+		<table width="400" height="169" border="0" bgcolor="#FFFFFF" valign="center">
         	<tr>
-           	<th scope="col"><p><%= image_tag "longrr.jpg", :width => "900", :height => "169" %></p>
+           	<th scope="col"><p><%= image_tag "rrss.gif", :width => "900", :height => "169" %></p>
            	</th>
          	</tr>
         </table>
@@ -32,8 +31,7 @@ text-align:center;
 <tr><td  colheight=50% colspan=2>Welcome to the NRDPFC Road Runner Sample Submission/Tracking website.<br>
 Please logon in using the following boxes.<br>
 If you do not have a login yet, please click on "Create New Login" link below.<br>
-<b>For help please contact Vythegi Srithayakumar,  vsrithayakumar@nrdpfc.ca<br>
-Click on Link below for information regarding the permits needed to send sample to NRDPFC<br></b>
+<b>For help please contact Vythegi Srithayakumar by email at vsrithayakumar@nrdpfc.ca<br></b>
 
 			<% form_tag do -%>
 				<tr><td  width = "20%" height = "30" ><label for="login">Login</label><td><%= text_field_tag 'login' %></td></tr>

@@ -9,29 +9,25 @@ vertical-align:top;
 }
 </style>
 <body>
-
 <table width="1024"  height=900 border="0" valign="top">
-  <tr> <td width=900 height="150" bgcolor="84ADB5" valign="top" align="center">
+  <tr> <td width=900 height="150" bgcolor="84ADB5" valign="top">
+	<table width="800" height="150" border="0" valign="top" align="center" >
+	  <tr> <td bgcolor="#FFFFFF">
+	  	<table width="800" height="169" border="0">
+          <tr> <%= image_tag "rrss.gif", :width => "900", :height => "169" %> 
+          </tr>
+        </table>
+<% if ENV['RAILS_SITE'] == 'TRACKER' %>
+	<h3 style=background-color:yellow><%= link_to 'DEMO Home', menu_path %></h3>
+<%else%>
+	<h3><%= link_to 'Home', menu_path %></h3>
+<%end%>	
 
-	<table border="1px" borderstyle="solid" bordercolor="black" bgcolor="84ADB5" width="400" height="169" align="center">
-           	<tr>
-			<th scope="col"><p><%= image_tag "rrss.gif", :width => "900", :height => "169" %></p>
-           	</th></tr>
-  		
-	<table class="rr" width="750" height="100" valign="top" align="center" cellpadding = "1" >
-	<tr><td colspan=6>
-	<% if ENV['RAILS_SITE'] == 'TRACKER' %>
-		<h3 style=background-color:yellow><%= link_to 'DEMO Home', menu_path %></h3>
-	<%else%>
-		<h3><%= link_to 'Home', menu_path %></h3>
-	<%end%>	
-	</td></tr>
-	<tr><td colspan=6>
-		<h2>Road Runner Samples ordered by 'Date Submitted' <br> for <%= current_user.to_s  %></h2>
-		<h2>Click on EDIT or TRACK </h2>
-	</td></tr>
+<h2>Road Runner Sample Listing in 'Date Submitted' order for <%= current_user.to_s  %></h2>
+<h2>Click on EDIT or TRACK </h2>
  
-  <tr height=20 bgcolor = "#A5D8F2">
+<table width="750" height="100" border="1" align="center" cellpadding = "1" >
+  <tr height=20>
 	<th width=100>Date Collected</th>
 	<th width=100>Collected By</th>
 	<th width=100>Bar Code</th>

@@ -1,3 +1,6 @@
+<html>
+<%= calendar_date_select_includes -%>
+<%= stylesheet_link_tag "basic" %>
 <head>
 <style type="text/css">
 table, td, th
@@ -6,39 +9,27 @@ td
 vertical-align:middle;
 text-align:center;
 }
-th
-{
-background-color:#FFFF66;
-color:black;
-}
-
 </style>
 </head>
 
+
 <table width="1024" border="0">
   <tr>
-    <td width="900" height="450" bgcolor="#FFFF66">
-	<table width="900" height="450" border="0" align="center" bordercolor="#ABBCD8">
+    <td width="900" height="450" bgcolor="84ADB5">
+	<table width="900" height="450" border="0" align="center" >
 	  <tr>
 		<td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF"><table width="900" height="169" border="0">
           <tr>
-            <th scope="col"><p><%= image_tag "longrr.jpg", :width => "900", :height => "169" %></p>
+            <th scope="col"><p><%= image_tag "rrss.gif", :width => "900", :height => "169" %></p>
               </th>
           </tr>
         </table>
-		  <table width="904" border="1" align="center" bgcolor="#FFFF66" cellpadding=5>
+		  <table width="904" border="1" align="center" bgcolor="#FFFFFF" cellpadding=5>
             <tr>
-              <th  >Please fill in all fields with your sample data.<br>  Click the CREATE button when you are finished to add the sample into the database and begin the tracking process.<br>
+              <th bgcolor = "#A5D8F2">Please fill in all fields with your sample data.<br>  Click the CREATE button when you are finished to add the sample into the database and begin the tracking process.<br>
 			  Thank you for entering your sample in the NRDPFC Road Runner databank.<br>  You can check the tracking section to follow your sample through the system.</th>
             </tr>
           </table>
-<style type="text/css">
-table, td, th
-td
-{
-text-align:left;
-}
-</style>
 
 <div align="center">          
 <% if ENV['RAILS_SITE'] == 'TRACKER' %>
@@ -49,8 +40,8 @@ text-align:left;
 
 <h2><b><font color=red>SUBMIT</font></b> New Sample </h2>
  
-	<table width="905" height="395" border="0" align="left" cellspacing="2" cellpadding = "2">
-		<tr><th>Name</th><th>Value</th><th>Description</th></tr>
+	<table class="rr" width="905" height="395" align="left" cellspacing="2" cellpadding = "2">
+		<tr bgcolor="#A5D8F2"><th>Name</th><th>Value</th><th>Description</th></tr>
          <tr></tr>
 	<% form_for(@sample) do |f| %>
 	<tr><td  width="25%"><%= f.label :sample_bc, 'Sample Barcode' %></td><td><%= f.text_field :sample_bc %></td><td>bar code</td></tr>

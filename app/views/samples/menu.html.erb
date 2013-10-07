@@ -2,34 +2,32 @@
 <style type="text/css">
 table, td, th
 {
-border:10px ;
+border:0px ;
 text-align:left;
 }
 th
 {
-background-color:#FFFF66;
+background-color:#d2dbec;
 color:black;
 }
-
 </style>
 
 <body>
-<table width="1024" border="10">
-  <tr><td width=900 height="450" bgcolor="#FFFF66">
-	<table width="900" height="450" border="10" align="center" bordercolor="#FFFF66">
+<table width="1024" border="0">
+  <tr><td width=900 height="450" bgcolor="#84ADB5">
+	<table width="900" height="450" border="0" align="center" >
 	  	<tr><td width="900" height="450" align="center" valign="top" bgcolor="#FFFFFF">
 
-		<table width="400" height="169" border="10" bgcolor="#FFFF66">
-			<tr><td><h2>NRDPFC Road Runner Sample Submission/Tracking</h2></td></tr>
+		<table width="400" height="169" border="0" >
         	<tr>
-           	<th scope="col"><p><%= image_tag "longrr.jpg", :width => "900", :height => "169" %></p>
+           	<th scope="col"><p><%= image_tag "rrss.gif", :width => "900", :height => "169" %></p>
            	</th>
          	</tr>
 
     	</table>
-        <table width="600" height="295" border="10"  align="center" cellspacing="1" >
+        <table width="600" height="295" border="10"  align="center" cellspacing="1" bgcolor= "FFFFFF">
     			<tr><td colspan=3><h2>Menu for Road Runner Samples</h2></td></tr>
-	            <tr><td colspan=3><h3>For help please contact Vythegi Srithayakumar, vsrithayakumar@nrdpfc.ca</h2></td></tr>
+	            <tr><td colspan=3><h3>For help please email Vythegi Srithayakumar at vsrithayakumar@nrdpfc.ca</h2></td></tr>
 	            <tr><td colspan=3><h3>Click on Link below for information regarding the permits needed to send sample to NRDPFC</h2></td></tr>
 				<tr><td colspan=3> Logged in as: <%= current_user.name%></td></tr>
 				<tr><td> <br></td></tr>
@@ -38,6 +36,7 @@ color:black;
 				<tr><td><%= link_to 'Batch Entry Samples', imports_path %></td><td>Click here to Import Samples</td></tr>
 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
 				<tr><td><%= error_messages_for :user %></td></tr>
+				<tr><td> <br></td></tr><tr><td colspan=2><a href="NRDPFC Chicken Sampling Instructions.pdf">NRDPFC Chicken Sampling Instructions</a></td></tr>
           </table>
           <p align="left">&nbsp;</p>
           <p align="left">&nbsp;</p>
