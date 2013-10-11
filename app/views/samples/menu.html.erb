@@ -25,14 +25,14 @@ color:black;
          	</tr>
 
     	</table>
-        <table width="600" height="295" border="10"  align="center" cellspacing="1" bgcolor= "FFFFFF">
-    			<tr><td colspan=3><h2>Menu for Road Runner Samples</h2></td></tr>
-	            <tr><td colspan=3><h3>For help please email Vythegi Srithayakumar at vsrithayakumar@nrdpfc.ca</h2></td></tr>
-	            <tr><td colspan=3><h3>Click on Link below for information regarding the permits needed to send sample to NRDPFC</h2></td></tr>
-				<tr><td colspan=3> Logged in as: <%= current_user.name%></td></tr>
+        <table width="650" height="295" border="10"  align="center" cellspacing="1" bgcolor= "FFFFFF">
+    			<tr><td colspan=2><h2>Menu for Road Runner Samples</h2></td></tr>
+	            <tr><td colspan=2><h3>For help please email Vythegi Srithayakumar at vsrithayakumar@nrdpfc.ca</h2></td></tr>
+				<tr><td colspan=2> Logged in as: <%= current_user.name%></td></tr>
 				<tr><td> <br></td></tr>
-				<tr><td width=30% ><%= link_to 'Submit a Sample', new_sample_path %></td><td width=70%>Click here to submit samples into the DNA databank</td></tr>
-				<tr><td><%= link_to 'Edit and Track Samples', samples_path %></td><td colspan=2>Click here to Track Samples or add information to a previously entered sample</td></tr>
+				<tr><td width=50% ><%= link_to 'Submit a Sample', new_sample_path %></td><td width=50%>Click here to submit samples into the DNA databank</td></tr>
+				<tr><td><%= link_to 'Edit and Track Samples', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+				<tr><td><%= link_to 'Sample Submission Spreadsheet', exports_path %></td><td>Click here to send your spreadsheet to NRDPFC</td></tr>
 				<tr><td><%= link_to 'Batch Entry Samples', imports_path %></td><td>Click here to Import Samples</td></tr>
 				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
 				<tr><td><%= error_messages_for :user %></td></tr>

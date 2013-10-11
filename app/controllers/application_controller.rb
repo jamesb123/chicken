@@ -5,7 +5,7 @@ require "current_project_helpers"
 require "faster_csv"
 # require "csv-mapper"
 
-#EMAIL_SAMPLES = "vsrithayakumar@nrdpfc.ca, mharnden@nrdpfc.ca, info@nrdpfc.ca, james@burrett.org"
+# EMAIL_SAMPLES = "vsrithayakumar@nrdpfc.ca, mharnden@nrdpfc.ca, info@nrdpfc.ca, james@burrett.org"
  EMAIL_SAMPLES = "james@burrett.org"
  PROJECT_NUMBER = 66
 

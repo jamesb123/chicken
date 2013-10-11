@@ -1,7 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :exports
+
   map.resources :imports
   map.resources :samples
 
+  
   # map.import_proc '/import/proc/:id', :controller => "imports", :action => "proc_csv"
 
   #resources :samples do
