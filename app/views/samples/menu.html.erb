@@ -30,11 +30,11 @@ color:black;
 	            <tr><td colspan=2><h3>For help please email Vythegi Srithayakumar at vsrithayakumar@nrdpfc.ca</h2></td></tr>
 				<tr><td colspan=2> Logged in as: <%= current_user.name%></td></tr>
 				<tr><td> <br></td></tr>
-				<tr><td width=50% ><%= link_to 'Submit a Sample', new_sample_path %></td><td width=50%>Click here to submit samples into the DNA databank</td></tr>
-				<tr><td><%= link_to 'Edit and Track Samples', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
-				<tr><td><%= link_to 'Sample Submission Spreadsheet', exports_path %></td><td>Click here to send your spreadsheet to NRDPFC</td></tr>
-				<tr><td><%= link_to 'Batch Entry Samples', imports_path %></td><td>Click here to Import Samples</td></tr>
-				<tr><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
+				<tr height="30"> <td width=50% ><%= link_to 'Submit a Sample', new_sample_path %></td><td width=50%>Click here to submit samples into the DNA databank</td></tr>
+				<tr height="30"><td><%= link_to 'Edit and Track Samples', samples_path %></td><td>Click here to Track Samples or add information to a previously entered sample</td></tr>
+				<tr height="30"><td><%= link_to 'Sample Submission - Send Spreadsheet', exports_path %></td><td>Click here to send your spreadsheet to NRDPFC</td></tr>
+				<tr height="30"><td><%= link_to 'Direct Batch Import of Samples', imports_path %></td><td>Click here to Import Samples</td></tr>
+				<tr height="30"><td><%= link_to "Logout", :controller => "/account", :action => "logout" %></td><td>Exit the system</td></tr>
 				<tr><td><%= error_messages_for :user %></td></tr>
 				<tr><td> <br></td></tr><tr><td colspan=2><a href="NRDPFC Chicken Sampling Instructions.pdf">NRDPFC Chicken Sampling Instructions</a></td></tr>
           </table>

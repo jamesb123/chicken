@@ -40,8 +40,8 @@ def export
     
     Emailer.deliver_email_with_attachment(EMAIL_SAMPLES, email_subject, current_user.name, orig_fname, file_contents )
     @mssg = "Export successful. " + orig_fname
-    #render 'show'
-    #return
+    render 'show'
+    return
 
   
   end  
